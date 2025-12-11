@@ -24,6 +24,7 @@ namespace paint
         bool matitaSelected = false;
         public MainWindow()
         {
+           
             InitializeComponent();
         }
 
@@ -88,6 +89,28 @@ namespace paint
             
         }
 
-        
+        private void bordo_secchiello_MouseEnter(object sender, MouseEventArgs e)
+        {
+            bordo_secchiello.BorderBrush = Brushes.Coral;
+            bordo_secchiello.BorderThickness = new Thickness(2);
+        }
+
+        private void bordo_secchiello_MouseLeave(object sender, MouseEventArgs e)
+        {
+            bordo_secchiello.BorderBrush = Brushes.Transparent;
+            bordo_secchiello.BorderThickness = new Thickness(2);
+        }
+
+        private void bordo_testo_MouseEnter(object sender, MouseEventArgs e)
+        {
+            bordo_testo.BorderBrush = Brushes.Coral;
+            bordo_testo.BorderThickness = new Thickness(2);
+        }
+
+        private void bordo_testo_MouseLeave(object sender, MouseEventArgs e)
+        {
+            bordo_testo.BorderBrush = Brushes.Transparent;
+            bordo_testo.BorderThickness = new Thickness(2);
+        }
     }
 }
