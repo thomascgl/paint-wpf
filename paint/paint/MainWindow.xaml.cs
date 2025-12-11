@@ -20,10 +20,38 @@ namespace paint
     /// </summary>
     public partial class MainWindow : Window
     {
+        Point currentPoint = new Point();
         bool matitaSelected = false;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Canvas_MouseDown_1(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.ButtonState == MouseButtonState.Pressed)
+            {
+                currentPoint = e.GetPosition(paintSurface);
+            }
+        }
+
+        private void Canvas_MouseMove_1(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                Line line = new Line();
+                line.Stroke = SystemColors.WindowFrameBrush;
+
+                line.X1 = currentPoint.X;
+                line.Y1 = currentPoint.Y;
+                line.X2 = e.GetPosition(paintSurface).X;
+                line.Y2 = e.GetPosition(paintSurface).Y;
+
+
+                currentPoint = e.GetPosition(paintSurface);
+
+                paintSurface.Children.Add(line);
+            }
         }
 
         private void bordoMatita_MouseEnter(object sender, MouseEventArgs e)
