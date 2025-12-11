@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:paint"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
-    <Grid>
+    <Grid Background="#FFF0F0F0">
+        <Canvas  Name="paintSurface" MouseDown="Canvas_MouseDown_1" MouseMove="Canvas_MouseMove_1" Margin="138,140,137,40" >
+            <Canvas.Background>
+                <SolidColorBrush Color="White" Opacity="1"/>
+            </Canvas.Background>
+        </Canvas>
         <Border x:Name="bordoMatita" BorderThickness="1" HorizontalAlignment="Left" Height="35" Margin="355,48,0,0" VerticalAlignment="Top" Width="35" MouseEnter="bordoMatita_MouseEnter" MouseLeave="bordoMatita_MouseLeave">
             <Border.Resources>
                 <Style TargetType="Border">
