@@ -43,5 +43,23 @@ namespace paint
             matitaSelected = true;
             MessageBox.Show("selezionata");
         }
+        private void gomma_border_MouseEnter(object sender, MouseEventArgs e)
+        {
+            gomma_border.BorderBrush = Brushes.Coral;
+            gomma_border.BorderThickness = new Thickness(2);
+        }
+
+        private void gomma_border_MouseLeave(object sender, MouseEventArgs e)
+        {
+            gomma_border.BorderBrush = Brushes.Transparent;
+            gomma_border.BorderThickness = new Thickness(2);
+        }
+
+        private void gomma_bordo_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+        
     }
 }

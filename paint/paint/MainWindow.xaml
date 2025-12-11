@@ -15,6 +15,14 @@
             </Border.Resources>
             <Image x:Name="matita" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" Source="/matita.png" MouseDown="matita_MouseDown"/>
         </Border>
-        
+        <Border x:Name="gomma_border" BorderThickness="1" HorizontalAlignment="Left" Height="35" Margin="390,48,0,0" VerticalAlignment="Top" Width="35" MouseEnter="gomma_border_MouseEnter" MouseLeave="gomma_border_MouseLeave">
+            <Image HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" Source="/gomma.png"/>
+            <Border.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius"  Value="5"></Setter>
+                </Style>
+            </Border.Resources>
+        </Border>
+
     </Grid>
 </Window>

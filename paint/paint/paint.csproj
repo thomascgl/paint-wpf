@@ -97,5 +97,8 @@
   <ItemGroup>
     <Resource Include="matita.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gomma.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
