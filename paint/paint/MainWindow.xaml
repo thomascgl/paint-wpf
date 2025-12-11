@@ -7,22 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
     <Grid>
-        <Border x:Name="bordoMatita" BorderThickness="1" HorizontalAlignment="Left" Height="35" Margin="355,48,0,0" VerticalAlignment="Top" Width="35" MouseEnter="bordoMatita_MouseEnter" MouseLeave="bordoMatita_MouseLeave">
-            <Border.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius"  Value="5"></Setter>
-                </Style>
-            </Border.Resources>
-            <Image x:Name="matita" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" Source="/matita.png" MouseDown="matita_MouseDown"/>
-        </Border>
-        <Border x:Name="gomma_border" BorderThickness="1" HorizontalAlignment="Left" Height="35" Margin="390,48,0,0" VerticalAlignment="Top" Width="35" MouseEnter="gomma_border_MouseEnter" MouseLeave="gomma_border_MouseLeave">
-            <Image HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" Source="/gomma.png"/>
-            <Border.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius"  Value="5"></Setter>
-                </Style>
-            </Border.Resources>
-        </Border>
+        <ToolBar HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="107" Background="White" BorderBrush="#FFCF6161" BorderThickness="1,1,1,1" Header="" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalContentAlignment="Center">
+            <Border x:Name="bordoMatita" BorderThickness="1" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="35" MouseEnter="bordoMatita_MouseEnter" MouseLeave="bordoMatita_MouseLeave">
+                <Border.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius"  Value="5"/>
+                    </Style>
+                </Border.Resources>
+                <Image x:Name="matita" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" Source="/matita.png" MouseDown="matita_MouseDown"/>
+            </Border>
+            <Border x:Name="gomma_border" BorderThickness="1" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="35" MouseEnter="gomma_border_MouseEnter" MouseLeave="gomma_border_MouseLeave">
+                <Border.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius"  Value="5"/>
+                    </Style>
+                </Border.Resources>
+                <Image HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" Source="/gomma.png"/>
+            </Border>
+        </ToolBar>
 
     </Grid>
 </Window>
