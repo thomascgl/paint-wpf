@@ -8,59 +8,63 @@
         Title="MainWindow" Height="1080" Width="1920">
 
     <Grid Background="#FFC3C3C3">
+        <ToolBarTray HorizontalAlignment="Center" Height="1064" VerticalAlignment="Center" Width="1920" >
+            <ToolBar HorizontalAlignment="Left" Height="94" VerticalAlignment="Center" Width="111">
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="87">
+                    <Border.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius"  Value="5"/>
+                        </Style>
+                    </Border.Resources>
+                    <WrapPanel Height="79" VerticalAlignment="Top" Width="71" HorizontalAlignment="Center" Margin="0,9,0,0">
+                        <WrapPanel.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius"  Value="5"/>
+                            </Style>
+                        </WrapPanel.Resources>
+                        <Border x:Name="bordoMatita" BorderThickness="1" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="35" MouseEnter="bordoMatita_MouseEnter" MouseLeave="bordoMatita_MouseLeave">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"  Value="5"/>
+                                </Style>
+                            </Border.Resources>
+                            <Image x:Name="matita" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" Source="/matita.png" MouseDown="matita_MouseDown"/>
+                        </Border>
+                        <Border x:Name="bordo_testo" BorderThickness="1" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="34" MouseEnter="bordo_testo_MouseEnter" MouseLeave="bordo_testo_MouseLeave">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"  Value="5"/>
+                                </Style>
+                            </Border.Resources>
+                            <Label Content="A" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+                        </Border>
+
+                        <Border x:Name="gomma_border" BorderThickness="1" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="36" MouseEnter="gomma_border_MouseEnter" MouseLeave="gomma_border_MouseLeave">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"  Value="5"/>
+                                </Style>
+                            </Border.Resources>
+                            <Image HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" Source="/gomma.png"/>
+                        </Border>
+                        <Border x:Name="bordo_secchiello" BorderThickness="1" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="34" MouseEnter="bordo_secchiello_MouseEnter" MouseLeave="bordo_secchiello_MouseLeave">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"  Value="5"/>
+                                </Style>
+                            </Border.Resources>
+                            <Image HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" Source="/secchiello 2.png"/>
+                        </Border>
+                    </WrapPanel>
+                </Border>
+            </ToolBar>
+        </ToolBarTray>
 
         <Canvas  Name="paintSurface" MouseDown="Canvas_MouseDown_1" MouseMove="Canvas_MouseMove_1" Margin="138,140,137,40" >
             <Canvas.Background>
                 <SolidColorBrush Color="White" Opacity="1"/>
             </Canvas.Background>
         </Canvas>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="87" Margin="10,10,0,0">
-            <Border.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius"  Value="5"/>
-                </Style>
-            </Border.Resources>
-            <WrapPanel Height="72" VerticalAlignment="Bottom" Width="71" HorizontalAlignment="Left" Margin="5,0,0,6">
-                <WrapPanel.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius"  Value="5"/>
-                    </Style>
-                </WrapPanel.Resources>
-                <Border x:Name="bordoMatita" BorderThickness="1" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="35" MouseEnter="bordoMatita_MouseEnter" MouseLeave="bordoMatita_MouseLeave">
-                    <Border.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius"  Value="5"/>
-                        </Style>
-                    </Border.Resources>
-                    <Image x:Name="matita" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" Source="/matita.png" MouseDown="matita_MouseDown"/>
-                </Border>
-                <Border x:Name="bordo_testo" BorderThickness="1" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="34" MouseEnter="bordo_testo_MouseEnter" MouseLeave="bordo_testo_MouseLeave">
-                    <Border.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius"  Value="5"/>
-                        </Style>
-                    </Border.Resources>
-                    <Label Content="A" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontFamily="Yu Gothic UI Light"/>
-                </Border>
-
-                <Border x:Name="gomma_border" BorderThickness="1" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="36" MouseEnter="gomma_border_MouseEnter" MouseLeave="gomma_border_MouseLeave">
-                    <Border.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius"  Value="5"/>
-                        </Style>
-                    </Border.Resources>
-                    <Image HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" Source="/gomma.png"/>
-                </Border>
-                <Border x:Name="bordo_secchiello" BorderThickness="1" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="34" MouseEnter="bordo_secchiello_MouseEnter" MouseLeave="bordo_secchiello_MouseLeave">
-                    <Border.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius"  Value="5"/>
-                        </Style>
-                    </Border.Resources>
-                    <Image HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" Source="/secchiello 2.png"/>
-                </Border>
-            </WrapPanel>
-        </Border>
 
     </Grid>
 </Window>

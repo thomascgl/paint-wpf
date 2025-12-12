@@ -18,10 +18,13 @@ namespace paint
     /// <summary>
     /// Logica di interazione per MainWindow.xaml
     /// </summary>
+    
+
     public partial class MainWindow : Window
     {
         Point currentPoint = new Point();
         bool matitaSelected = false;
+        DraggableToolBar toolbar = new DraggableToolBar();
         public MainWindow()
         {
            
