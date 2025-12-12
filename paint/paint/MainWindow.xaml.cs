@@ -29,6 +29,8 @@ namespace paint
         {
            
             InitializeComponent();
+            ellisse_n.Fill = Brushes.Black;
+            ellisse_b.Fill = Brushes.White;
         }
 
         private void Canvas_MouseDown_1(object sender, System.Windows.Input.MouseButtonEventArgs e)

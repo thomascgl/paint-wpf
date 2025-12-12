@@ -8,7 +8,7 @@
         Title="MainWindow" Height="1080" Width="1920">
 
     <Grid Background="#FFC3C3C3">
-        <ToolBarTray HorizontalAlignment="Center" Height="1064" VerticalAlignment="Center" Width="1920" >
+        <ToolBarTray HorizontalAlignment="Center" Height="1064" VerticalAlignment="Center" Width="1920" Background="{x:Null}" >
             <ToolBar HorizontalAlignment="Left" Height="94" VerticalAlignment="Center" Width="111">
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="87">
                     <Border.Resources>
@@ -65,6 +65,111 @@
                 <SolidColorBrush Color="White" Opacity="1"/>
             </Canvas.Background>
         </Canvas>
+        <WrapPanel HorizontalAlignment="Left" Height="81" Margin="117,10,0,0" VerticalAlignment="Top" Width="332">
+            <WrapPanel HorizontalAlignment="Center" Height="81" VerticalAlignment="Center" Width="43">
+                <Border x:Name="bottone_nero" BorderThickness="1" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" Width="40">
+                    <Ellipse x:Name="ellisse_n"
+        Width="30" VerticalAlignment="Center" Stroke="Black" Height="30" HorizontalAlignment="Center"/>
+                </Border>
+                <Border x:Name="bottone_bianco" BorderThickness="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="40">
+                    <Ellipse x:Name="ellisse_b"
+        Width="30" VerticalAlignment="Center" Stroke="Black" Height="30" HorizontalAlignment="Center"/>
+                </Border>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Center" Height="74" VerticalAlignment="Center" Width="264">
+                <Border x:Name="colore_1" BorderThickness="1" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="26">
+                    <Ellipse x:Name="ellisse_1" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_2" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_2" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_3" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_3" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_4" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_4" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_5" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_5" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_6" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_6" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_7" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_7" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_8" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_8" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_9" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_9" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_10" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_10" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_11" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_11" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_12" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_12" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_13" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_13" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_14" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_14" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_15" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_15" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_16" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_16" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_17" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_17" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_18" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_18" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_19" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_19" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_20" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_20" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_21" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_21" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_22" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_22" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_23" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_23" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_24" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_24" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_25" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_25" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_26" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_26" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_27" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_27" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_28" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse x:Name="ellisse_28" HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+                <Border x:Name="colore_29" BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Ellipse HorizontalAlignment="Center" Height="20" Stroke="Black" VerticalAlignment="Center" Width="20"/>
+                </Border>
+
+                <Border BorderThickness="1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="26">
+                    <Label x:Name="aggiungi_colore" Content="+" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="5,1,5,5" FontSize="15"/>
+                </Border>
+            </WrapPanel>
+        </WrapPanel>
 
     </Grid>
 </Window>
