@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:paint"
         mc:Ignorable="d"
-        Title="MainWindow" Height="860" Width="1416">
+        Title="MainWindow" Height="860" Width="1216">
     <!-- canvas area -->
     <Grid Background="#FFC3C3C3">
-        <InkCanvas Name="paintSurface" Margin="288,164,25,68" MouseDown="paintSurface_MouseDown" MouseMove="paintSurface_MouseMove">
+        <InkCanvas Name="paintSurface" Margin="288,164,25,68">
             <InkCanvas.Background>
                 <SolidColorBrush Color="White" Opacity="1"/>
             </InkCanvas.Background>
@@ -44,7 +44,7 @@
                                     <Setter Property="CornerRadius"  Value="5"/>
                                 </Style>
                             </Border.Resources>
-                            <Image HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" Width="40" Source="/gomma.png"/>
+                            <Image HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" Width="40" Source="/gomma.png" MouseDown="Image_MouseDown"/>
                         </Border>
                         <Border x:Name="bordo_secchiello" BorderThickness="1" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="45" MouseEnter="bordo_secchiello_MouseEnter" MouseLeave="bordo_secchiello_MouseLeave">
                             <Border.Resources>

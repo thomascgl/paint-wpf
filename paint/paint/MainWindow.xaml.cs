@@ -24,37 +24,22 @@ namespace paint
 
     public partial class MainWindow : Window
     {
-        Point currentPoint = new Point();
         bool matitaSelected = false;
         DraggableToolBar toolbar = new DraggableToolBar();
+
         public MainWindow()
         {
-           
             InitializeComponent();
-           
-        }
-
-        private void Canvas_MouseDown_1(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            if (e.ButtonState == MouseButtonState.Pressed)
-            {
-                currentPoint = e.GetPosition(paintSurface);
-            }
-        }
-        
 
             DrawingAttributes inkAttributes = new DrawingAttributes()
             {
                 FitToCurve = true,
                 Height = 5,
                 Width = 5,
-                Color = Colors.Red,
             };
 
-
-       
-
-        
+            paintSurface.DefaultDrawingAttributes = inkAttributes;
+        }
 
         private void bordoMatita_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -71,7 +56,7 @@ namespace paint
         private void matita_MouseDown(object sender, MouseButtonEventArgs e)
         {
             matitaSelected = true;
-            MessageBox.Show("selezionata");
+            paintSurface.EditingMode = InkCanvasEditingMode.Ink;
         }
         private void gomma_border_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -114,9 +99,6 @@ namespace paint
             bordo_testo.BorderThickness = new Thickness(2);
         }
 
-
-
-
         private void label_freccia_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DoubleAnimation anim = new DoubleAnimation
@@ -146,37 +128,11 @@ namespace paint
 
             }
         }
-        private void gomma_MouseDown(object sender, MouseButtonEventArgs e)
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
             matitaSelected = false;
             paintSurface.EditingMode = InkCanvasEditingMode.EraseByPoint;
-        }
-
-        private void paintSurface_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ButtonState == MouseButtonState.Pressed)
-            {
-                currentPoint = e.GetPosition(paintSurface);
-            }
-        }
-
-        private void paintSurface_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                Line line = new Line();
-                line.Stroke = SystemColors.WindowFrameBrush;
-
-                line.X1 = currentPoint.X;
-                line.Y1 = currentPoint.Y;
-                line.X2 = e.GetPosition(paintSurface).X;
-                line.Y2 = e.GetPosition(paintSurface).Y;
-
-
-                currentPoint = e.GetPosition(paintSurface);
-
-                paintSurface.Children.Add(line);
-            }
         }
     }
 }
