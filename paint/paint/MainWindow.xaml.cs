@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -22,42 +23,26 @@ namespace paint
 
     public partial class MainWindow : Window
     {
-        Point currentPoint = new Point();
+        //grazie tanto a : http://www.kirupa.com/blend_wpf/inkcanvas_pg1.htm
         bool matitaSelected = false;
         DraggableToolBar toolbar = new DraggableToolBar();
+
         public MainWindow()
         {
-           
             InitializeComponent();
             ellisse_n.Fill = Brushes.Black;
             ellisse_b.Fill = Brushes.White;
-        }
 
-        private void Canvas_MouseDown_1(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            if (e.ButtonState == MouseButtonState.Pressed)
-            {
-                currentPoint = e.GetPosition(paintSurface);
-            }
-        }
+            DrawingAttributes inkAttributes = new DrawingAttributes();
 
-        private void Canvas_MouseMove_1(object sender, System.Windows.Input.MouseEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                Line line = new Line();
-                line.Stroke = SystemColors.WindowFrameBrush;
+            //inkAttributes.IsHighlighter = false;
+            inkAttributes.FitToCurve = true;
+            inkAttributes.Height = 5;
+            inkAttributes.Width = 5;
+            inkAttributes.Color = Colors.Red;
 
-                line.X1 = currentPoint.X;
-                line.Y1 = currentPoint.Y;
-                line.X2 = e.GetPosition(paintSurface).X;
-                line.Y2 = e.GetPosition(paintSurface).Y;
-
-
-                currentPoint = e.GetPosition(paintSurface);
-
-                paintSurface.Children.Add(line);
-            }
+            paintSurface.DefaultDrawingAttributes = inkAttributes;
+            paintSurface.EraserShape = new RectangleStylusShape(10, 10); //grandezza gomma
         }
 
         private void bordoMatita_MouseEnter(object sender, MouseEventArgs e)
@@ -75,7 +60,8 @@ namespace paint
         private void matita_MouseDown(object sender, MouseButtonEventArgs e)
         {
             matitaSelected = true;
-            MessageBox.Show("selezionata");
+            paintSurface.EditingMode = InkCanvasEditingMode.Ink;
+            //MessageBox.Show("selezionata");
         }
         private void gomma_border_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -116,6 +102,12 @@ namespace paint
         {
             bordo_testo.BorderBrush = Brushes.Transparent;
             bordo_testo.BorderThickness = new Thickness(2);
+        }
+
+        private void gomma_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            matitaSelected = false;
+            paintSurface.EditingMode = InkCanvasEditingMode.EraseByPoint;
         }
     }
 }
