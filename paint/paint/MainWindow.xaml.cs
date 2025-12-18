@@ -134,5 +134,17 @@ namespace paint
             matitaSelected = false;
             paintSurface.EditingMode = InkCanvasEditingMode.EraseByPoint;
         }
+
+        private void ellisse_color_1_MouseEnter(object sender, MouseEventArgs e)
+        {
+            personalizzato_1.BorderBrush = Brushes.Coral;
+            personalizzato_1.BorderThickness = new Thickness(1);
+        }
+
+        private void ellisse_color_1_MouseLeave(object sender, MouseEventArgs e)
+        {
+            personalizzato_1.BorderBrush = Brushes.Transparent;
+
+        }
     }
 }

@@ -13,9 +13,9 @@
                 <SolidColorBrush Color="White" Opacity="1"/>
             </InkCanvas.Background>
         </InkCanvas>
-        <Border x:Name="border_strumenti" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="708" VerticalAlignment="Center" Width="44" CornerRadius="0,30,30,0">
+        <Border x:Name="border_strumenti" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="708" VerticalAlignment="Center" Width="159" CornerRadius="0,30,30,0">
             <Grid Height="708" VerticalAlignment="Center" Margin="0,0,-1,0" HorizontalAlignment="Right" Width="148">
-                <Grid x:Name="grid_strumenti" Height="690" VerticalAlignment="Top" HorizontalAlignment="Left" Width="104" Visibility="Hidden">
+                <Grid x:Name="grid_strumenti" Height="690" VerticalAlignment="Top" HorizontalAlignment="Left" Width="104">
                     <WrapPanel x:Name="strumenti_pannello" Height="115" VerticalAlignment="Top" Width="102" HorizontalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,10,0,0">
                         <WrapPanel.Resources>
                             <Style TargetType="{x:Type Border}">
@@ -57,34 +57,74 @@
                         <Label Content="Strumenti" HorizontalAlignment="Center" Height="22" VerticalAlignment="Center" Width="102" Background="Transparent" Foreground="#FFA4A4A4" Padding="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     </WrapPanel>
                     <WrapPanel HorizontalAlignment="Center" Height="131" Margin="0,130,0,0" VerticalAlignment="Top" Width="102">
-                        <Border BorderThickness="1" Height="40" Width="52">
-                            <Ellipse HorizontalAlignment="Center" Height="36" Stroke="Black" VerticalAlignment="Center" Width="36"/>
+                        <Border x:Name="bordo_colore_nero" BorderThickness="1" Height="40" Width="52" BorderBrush="#FFB54848">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"  Value="20"/>
+                                </Style>
+                            </Border.Resources>
+                            <Ellipse HorizontalAlignment="Center" Height="36" Stroke="Black" VerticalAlignment="Center" Width="36" Fill="Black"/>
                         </Border>
-                        <Border BorderThickness="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="50">
-                            <Ellipse HorizontalAlignment="Center" Height="36" Stroke="Black" VerticalAlignment="Center" Width="36"/>
+                        <Border x:Name="bordo_colore_bianco" BorderThickness="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="50">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"  Value="20"/>
+                                </Style>
+                            </Border.Resources>
+                            <Ellipse HorizontalAlignment="Center" Height="36" Stroke="Black" VerticalAlignment="Center" Width="36" Fill="White"/>
                         </Border>
-                        <Border BorderThickness="1" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="34">
-                            <Ellipse HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
+                        <Border x:Name="personalizzato_1" BorderThickness="1" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="34">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"  Value="20"/>
+                                </Style>
+                            </Border.Resources>
+                            <Ellipse x:Name="ellisse_color_1" HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30" MouseEnter="ellisse_color_1_MouseEnter" MouseLeave="ellisse_color_1_MouseLeave"/>
                         </Border>
-                        <Border BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
-                            <Ellipse HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
+                        <Border x:Name="personalizzato_2" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"  Value="20"/>
+                                </Style>
+                            </Border.Resources>
+                            <Ellipse x:Name="ellisse_color_2" HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
                         </Border>
-                        <Border BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
-                            <Ellipse HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
+                        <Border x:Name="personalizzato_3" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"  Value="20"/>
+                                </Style>
+                            </Border.Resources>
+                            <Ellipse x:Name="ellisse_color_3" HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
                         </Border>
-                        <Border BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
-                            <Ellipse HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
+                        <Border x:Name="personalizzato_4" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"  Value="20"/>
+                                </Style>
+                            </Border.Resources>
+                            <Ellipse x:Name="ellisse_color_4" HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
                         </Border>
-                        <Border BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
-                            <Ellipse HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
+                        <Border x:Name="personalizzato_5" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"  Value="20"/>
+                                </Style>
+                            </Border.Resources>
+                            <Ellipse x:Name="ellisse_color_5" HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
                         </Border>
-                        <Border BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
+                        <Border x:Name="aggiungi_colore" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius"  Value="20"/>
+                                </Style>
+                            </Border.Resources>
                             <Label Content="+" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Padding="5,0,5,5"/>
                         </Border>
                         <Label Content="Colori" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="102" Padding="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" Foreground="#FFABA5AC"/>
                     </WrapPanel>
                 </Grid>
-                <Label x:Name="label_freccia" Content="&gt;" Height="886" VerticalAlignment="Center" Padding="5,5,5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="50" FontFamily="Bahnschrift Light" MouseLeftButtonDown="label_freccia_MouseLeftButtonDown" Margin="0,0,5,0" HorizontalAlignment="Right" Width="34"/>
+                <Label x:Name="label_freccia" Content="&lt;" Height="886" VerticalAlignment="Center" Padding="5,5,5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="50" FontFamily="Bahnschrift Light" MouseLeftButtonDown="label_freccia_MouseLeftButtonDown" Margin="0,0,5,0" HorizontalAlignment="Right" Width="34"/>
             </Grid>
         </Border>
 
