@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -28,13 +26,13 @@ namespace paint
         //grazie tanto a : http://www.kirupa.com/blend_wpf/inkcanvas_pg1.htm
         bool matitaSelected = false;
         DraggableToolBar toolbar = new DraggableToolBar();
-
-
         public MainWindow()
         {
             InitializeComponent();
-           
+            ellisse_n.Fill = Brushes.Black;
+            ellisse_b.Fill = Brushes.White;
         }
+
         private void Canvas_MouseDown_1(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (e.ButtonState == MouseButtonState.Pressed)
@@ -113,6 +111,7 @@ namespace paint
             bordo_testo.BorderBrush = Brushes.Transparent;
             bordo_testo.BorderThickness = new Thickness(2);
         }
+<<<<<<< HEAD
 
         
 
@@ -150,5 +149,7 @@ namespace paint
             matitaSelected = false;
             paintSurface.EditingMode = InkCanvasEditingMode.EraseByPoint;
         }
+=======
+>>>>>>> parent of 696a66e (creazione animazione e pannello colori)
     }
 }
