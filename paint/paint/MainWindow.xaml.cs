@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -9,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -25,14 +27,14 @@ namespace paint
         Point currentPoint = new Point();
         bool matitaSelected = false;
         DraggableToolBar toolbar = new DraggableToolBar();
+
+
         public MainWindow()
         {
            
             InitializeComponent();
-            ellisse_n.Fill = Brushes.Black;
-            ellisse_b.Fill = Brushes.White;
+           
         }
-
         private void Canvas_MouseDown_1(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (e.ButtonState == MouseButtonState.Pressed)
@@ -116,6 +118,38 @@ namespace paint
         {
             bordo_testo.BorderBrush = Brushes.Transparent;
             bordo_testo.BorderThickness = new Thickness(2);
+        }
+
+        
+
+        private void label_freccia_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DoubleAnimation anim = new DoubleAnimation
+            {
+                From = 0,
+                To = 160,
+                Duration = new Duration(TimeSpan.FromSeconds(1)),
+                EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
+            };
+            DoubleAnimation anim2 = new DoubleAnimation
+            {
+                From = 160,
+                To = 45,
+                Duration = new Duration(TimeSpan.FromSeconds(1)),
+                EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseIn }
+            };
+            grid_strumenti.Visibility = Visibility.Visible;
+            if ((String)label_freccia.Content == ">")
+            {
+                border_strumenti.BeginAnimation(WidthProperty, anim);
+                label_freccia.Content = "<";
+            }
+            else if ((String)label_freccia.Content == "<")
+            {
+                border_strumenti.BeginAnimation(WidthProperty, anim2);
+                label_freccia.Content = ">";
+
+            }
         }
     }
 }
