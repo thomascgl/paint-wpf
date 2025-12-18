@@ -112,6 +112,7 @@ namespace paint
             bordo_testo.BorderThickness = new Thickness(2);
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         
 
@@ -149,6 +150,8 @@ namespace paint
             matitaSelected = false;
             paintSurface.EditingMode = InkCanvasEditingMode.EraseByPoint;
         }
+=======
+>>>>>>> parent of 696a66e (creazione animazione e pannello colori)
 =======
 >>>>>>> parent of 696a66e (creazione animazione e pannello colori)
     }

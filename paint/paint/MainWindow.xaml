@@ -8,6 +8,7 @@
         Title="MainWindow" Height="860" Width="1416">
 
     <Grid Background="#FFC3C3C3">
+<<<<<<< HEAD
 
 
 
@@ -39,6 +40,8 @@
                         <Ellipse x:Name="ellisse_b" Width="30" VerticalAlignment="Center" Stroke="Black" Height="30" HorizontalAlignment="Center"/>
                     </Border>
 
+=======
+>>>>>>> parent of 696a66e (creazione animazione e pannello colori)
         <ToolBarTray HorizontalAlignment="Center" Height="1064" VerticalAlignment="Center" Width="1920" Background="{x:Null}" >
             <ToolBar HorizontalAlignment="Left" Height="94" VerticalAlignment="Center" Width="111">
                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="87">
