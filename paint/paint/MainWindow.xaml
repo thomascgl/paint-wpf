@@ -6,16 +6,56 @@
         xmlns:local="clr-namespace:paint"
         mc:Ignorable="d"
         Title="MainWindow" Height="860" Width="1216">
+    <Window.Resources>
+        <Style x:Key="GlassPanelStyle" TargetType="Border">
+            <!-- Forma -->
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="BorderThickness" Value="1"/>
+
+            <!-- Colori vetro -->
+            <Setter Property="Background" Value="#70FFFFFF"/>
+            <Setter Property="BorderBrush" Value="#40FFFFFF"/>
+
+            <!-- Rendering -->
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+
+            <!-- Ombra -->
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="25"
+                              ShadowDepth="0"
+                              Color="Black"
+                              Opacity="0.25"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="passaggio" TargetType="{x:Type Ellipse}">
+            <Setter Property="Stroke" Value="Black"/>
+            <Setter Property="StrokeThickness" Value="1"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="StrokeThickness" Value="2"/>
+                    <Setter Property="Stroke" Value="#FFB54848"/>
+                </Trigger>
+                <Trigger Property="Fill" Value="{x:Null}">
+                    <Setter Property="Stroke" Value="Black"/>
+                    <Setter Property="StrokeThickness" Value="1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <!-- canvas area -->
     <Grid Background="#FFC3C3C3">
+
         <InkCanvas Name="paintSurface" Margin="288,164,25,68">
             <InkCanvas.Background>
                 <SolidColorBrush Color="White" Opacity="1"/>
             </InkCanvas.Background>
         </InkCanvas>
-        <Border x:Name="border_strumenti" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="708" VerticalAlignment="Center" Width="159" CornerRadius="0,30,30,0">
-            <Grid Height="708" VerticalAlignment="Center" Margin="0,0,-1,0" HorizontalAlignment="Right" Width="148">
-                <Grid x:Name="grid_strumenti" Height="690" VerticalAlignment="Top" HorizontalAlignment="Left" Width="104">
+        <Grid x:Name="griglia_oggetti" Height="708" VerticalAlignment="Center" HorizontalAlignment="Left" Width="152">
+            <Border x:Name="border_strumenti" BorderThickness="0,4,4,4" Height="690" VerticalAlignment="Center" CornerRadius="0,30,30,0" Margin="0,0,34,0" HorizontalAlignment="Right" Width="118" Style="{StaticResource GlassPanelStyle}">
+                <Grid x:Name="grid_strumenti" Height="690" VerticalAlignment="Center" Margin="0,0,-4,0">
                     <WrapPanel x:Name="strumenti_pannello" Height="115" VerticalAlignment="Top" Width="102" HorizontalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,10,0,0">
                         <WrapPanel.Resources>
                             <Style TargetType="{x:Type Border}">
@@ -56,14 +96,14 @@
                         </Border>
                         <Label Content="Strumenti" HorizontalAlignment="Center" Height="22" VerticalAlignment="Center" Width="102" Background="Transparent" Foreground="#FFA4A4A4" Padding="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     </WrapPanel>
-                    <WrapPanel HorizontalAlignment="Center" Height="131" Margin="0,130,0,0" VerticalAlignment="Top" Width="102">
-                        <Border x:Name="bordo_colore_nero" BorderThickness="1" Height="40" Width="52" BorderBrush="#FFB54848">
+                    <WrapPanel HorizontalAlignment="Center" Height="159" Margin="0,130,0,0" VerticalAlignment="Top" Width="102">
+                        <Border x:Name="bordo_colore_nero" BorderThickness="1" Height="40" Width="52" >
                             <Border.Resources>
                                 <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius"  Value="20"/>
+                                    <Setter Property="CornerRadius"  Value="100"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse HorizontalAlignment="Center" Height="36" Stroke="Black" VerticalAlignment="Center" Width="36" Fill="Black"/>
+                            <Ellipse x:Name="colore_nero" HorizontalAlignment="Center" Height="36" VerticalAlignment="Center" Width="36" Fill="Black"  Style="{StaticResource passaggio}" Stroke="DimGray" StrokeThickness="2" MouseLeftButtonDown="Ellipse_MouseLeftButtonDown_1"/>
                         </Border>
                         <Border x:Name="bordo_colore_bianco" BorderThickness="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="50">
                             <Border.Resources>
@@ -71,15 +111,15 @@
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse HorizontalAlignment="Center" Height="36" Stroke="Black" VerticalAlignment="Center" Width="36" Fill="White"/>
+                            <Ellipse x:Name="colore_bianco" HorizontalAlignment="Center" Height="36"  VerticalAlignment="Center" Width="36" Fill="White" Style="{StaticResource passaggio}" MouseLeftButtonDown="Ellipse_MouseLeftButtonDown"/>
                         </Border>
-                        <Border x:Name="personalizzato_1" BorderThickness="1" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="34">
+                        <Border x:Name="personalizzato_1" BorderThickness="1" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="34" >
                             <Border.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="ellisse_color_1" HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30" MouseEnter="ellisse_color_1_MouseEnter" MouseLeave="ellisse_color_1_MouseLeave"/>
+                            <Ellipse x:Name="ellisse_color_1" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" Style="{StaticResource passaggio}" MouseLeftButtonDown="ellisse_color_1_MouseLeftButtonDown"/>
                         </Border>
                         <Border x:Name="personalizzato_2" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
                             <Border.Resources>
@@ -87,7 +127,7 @@
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="ellisse_color_2" HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
+                            <Ellipse x:Name="ellisse_color_2" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" Style="{StaticResource passaggio}" MouseLeftButtonDown="ellisse_color_2_MouseLeftButtonDown"/>
                         </Border>
                         <Border x:Name="personalizzato_3" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
                             <Border.Resources>
@@ -95,7 +135,7 @@
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="ellisse_color_3" HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
+                            <Ellipse x:Name="ellisse_color_3" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" Style="{StaticResource passaggio}" MouseLeftButtonDown="ellisse_color_3_MouseLeftButtonDown"/>
                         </Border>
                         <Border x:Name="personalizzato_4" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
                             <Border.Resources>
@@ -103,7 +143,7 @@
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="ellisse_color_4" HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
+                            <Ellipse x:Name="ellisse_color_4" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" Style="{StaticResource passaggio}" MouseLeftButtonDown="ellisse_color_4_MouseLeftButtonDown"/>
                         </Border>
                         <Border x:Name="personalizzato_5" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
                             <Border.Resources>
@@ -111,7 +151,7 @@
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="ellisse_color_5" HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30"/>
+                            <Ellipse x:Name="ellisse_color_5" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" Style="{StaticResource passaggio}" MouseLeftButtonDown="ellisse_color_5_MouseLeftButtonDown"/>
                         </Border>
                         <Border x:Name="aggiungi_colore" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
                             <Border.Resources>
@@ -124,9 +164,13 @@
                         <Label Content="Colori" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="102" Padding="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" Foreground="#FFABA5AC"/>
                     </WrapPanel>
                 </Grid>
-                <Label x:Name="label_freccia" Content="&lt;" Height="886" VerticalAlignment="Center" Padding="5,5,5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="50" FontFamily="Bahnschrift Light" MouseLeftButtonDown="label_freccia_MouseLeftButtonDown" Margin="0,0,5,0" HorizontalAlignment="Right" Width="34"/>
-            </Grid>
-        </Border>
+            </Border>
+
+            <Label x:Name="label_freccia" Content="&lt;" Height="708" VerticalAlignment="Center" Padding="5,5,5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontFamily="Bahnschrift" MouseLeftButtonDown="label_freccia_MouseLeftButtonDown" Margin="0,0,5,0" HorizontalAlignment="Right" Width="29" Background="{x:Null}" Foreground="#FFD2D2D2">
+
+            </Label>
+        </Grid>
+        
 
 
     </Grid>

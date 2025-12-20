@@ -25,7 +25,7 @@ namespace paint
     public partial class MainWindow : Window
     {
         bool matitaSelected = false;
-        DraggableToolBar toolbar = new DraggableToolBar();
+        Ellipse[] colori;
 
         public MainWindow()
         {
@@ -39,11 +39,13 @@ namespace paint
             };
 
             paintSurface.DefaultDrawingAttributes = inkAttributes;
+
+            colori= new Ellipse[] {colore_nero,colore_bianco,ellisse_color_1, ellisse_color_2, ellisse_color_3, ellisse_color_4, ellisse_color_5 };
         }
 
         private void bordoMatita_MouseEnter(object sender, MouseEventArgs e)
         {
-            bordoMatita.BorderBrush = Brushes.Coral;
+            bordoMatita.BorderBrush = Brushes.DimGray;
             bordoMatita.BorderThickness = new Thickness(2);
         }
 
@@ -60,7 +62,7 @@ namespace paint
         }
         private void gomma_border_MouseEnter(object sender, MouseEventArgs e)
         {
-            gomma_border.BorderBrush = Brushes.Coral;
+            gomma_border.BorderBrush = Brushes.DimGray;
             gomma_border.BorderThickness = new Thickness(2);
         }
 
@@ -77,7 +79,7 @@ namespace paint
 
         private void bordo_secchiello_MouseEnter(object sender, MouseEventArgs e)
         {
-            bordo_secchiello.BorderBrush = Brushes.Coral;
+            bordo_secchiello.BorderBrush = Brushes.DimGray;
             bordo_secchiello.BorderThickness = new Thickness(2);
         }
 
@@ -89,7 +91,7 @@ namespace paint
 
         private void bordo_testo_MouseEnter(object sender, MouseEventArgs e)
         {
-            bordo_testo.BorderBrush = Brushes.Coral;
+            bordo_testo.BorderBrush = Brushes.DimGray;
             bordo_testo.BorderThickness = new Thickness(2);
         }
 
@@ -104,26 +106,26 @@ namespace paint
             DoubleAnimation anim = new DoubleAnimation
             {
                 From = 0,
-                To = 160,
+                To = 150,
                 Duration = new Duration(TimeSpan.FromSeconds(1)),
                 EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
             };
             DoubleAnimation anim2 = new DoubleAnimation
             {
-                From = 160,
-                To = 45,
+                From = 150,
+                To = 40,
                 Duration = new Duration(TimeSpan.FromSeconds(1)),
                 EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseIn }
             };
             grid_strumenti.Visibility = Visibility.Visible;
             if ((String)label_freccia.Content == ">")
             {
-                border_strumenti.BeginAnimation(WidthProperty, anim);
+                griglia_oggetti.BeginAnimation(WidthProperty, anim);
                 label_freccia.Content = "<";
             }
             else if ((String)label_freccia.Content == "<")
             {
-                border_strumenti.BeginAnimation(WidthProperty, anim2);
+                griglia_oggetti.BeginAnimation(WidthProperty, anim2);
                 label_freccia.Content = ">";
 
             }
@@ -135,16 +137,111 @@ namespace paint
             paintSurface.EditingMode = InkCanvasEditingMode.EraseByPoint;
         }
 
-        private void ellisse_color_1_MouseEnter(object sender, MouseEventArgs e)
+        private void ellisse_color_5_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            personalizzato_1.BorderBrush = Brushes.Coral;
-            personalizzato_1.BorderThickness = new Thickness(1);
+            ellisse_color_5.Stroke = Brushes.DimGray;
+            ellisse_color_5.StrokeThickness = 2;
+            foreach (Ellipse colore in colori)
+            {
+                if (colore != ellisse_color_5)
+                {
+                    colore.Stroke = Brushes.Black;
+                    colore.StrokeThickness = 1;
+
+                }
+            }
         }
 
-        private void ellisse_color_1_MouseLeave(object sender, MouseEventArgs e)
+        private void ellisse_color_4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            personalizzato_1.BorderBrush = Brushes.Transparent;
+            ellisse_color_4.Stroke = Brushes.DimGray;
+            ellisse_color_4.StrokeThickness = 2;
+            foreach (Ellipse colore in colori)
+            {
+                if (colore != ellisse_color_4)
+                {
+                    colore.Stroke = Brushes.Black;
+                    colore.StrokeThickness = 1;
 
+                }
+            }
+
+        }
+
+        private void ellisse_color_3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ellisse_color_3.Stroke = Brushes.DimGray;
+            ellisse_color_3.StrokeThickness = 2;
+            foreach (Ellipse colore in colori)
+            {
+                if (colore != ellisse_color_3)
+                {
+                    colore.Stroke = Brushes.Black;
+                    colore.StrokeThickness = 1;
+
+                }
+            }
+        }
+
+        private void ellisse_color_2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ellisse_color_2.Stroke = Brushes.DimGray;
+            ellisse_color_2.StrokeThickness = 2;
+            foreach (Ellipse colore in colori)
+            {
+                if (colore != ellisse_color_2)
+                {
+                    colore.Stroke = Brushes.Black;
+                    colore.StrokeThickness = 1;
+
+                }
+            }
+        }
+
+        private void ellisse_color_1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ellisse_color_1.Stroke = Brushes.DimGray;
+            ellisse_color_1.StrokeThickness = 2;
+            foreach (Ellipse colore in colori)
+            {
+                if (colore != ellisse_color_1)
+                {
+                    colore.Stroke = Brushes.Black;
+                    colore.StrokeThickness = 1;
+
+                }
+            }   
+
+        }
+
+        private void Ellipse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            colore_bianco.Stroke = Brushes.DimGray;
+            colore_bianco.StrokeThickness = 2;
+            foreach (Ellipse colore in colori)
+            {
+                if (colore != colore_bianco)
+                {
+                    colore.Stroke = Brushes.Black;
+                    colore.StrokeThickness = 1;
+
+                }
+            }
+        }
+
+        private void Ellipse_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        {
+            colore_nero.Stroke = Brushes.DimGray;
+            colore_nero.StrokeThickness = 2;
+            foreach (Ellipse colore in colori)
+            {
+                if (colore != colore_nero)
+                {
+                    colore.Stroke = Brushes.Black;
+                    colore.StrokeThickness = 1;
+
+                }
+            }
         }
     }
 }
