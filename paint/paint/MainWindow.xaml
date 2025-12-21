@@ -170,7 +170,17 @@
 
             </Label>
         </Grid>
-        
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="193" Margin="202,94,0,0" VerticalAlignment="Top" Width="179"/>
+        <Grid HorizontalAlignment="Left" Height="226" Margin="100,78,0,0" VerticalAlignment="Top" Width="204">
+            <Slider x:Name="slider_dimensione" HorizontalAlignment="Center" Height="50" Margin="0,37,0,0" VerticalAlignment="Top" Width="183" SmallChange="1" Maximum="100" Minimum="1" TickPlacement="BottomRight" Value="51" TickFrequency="10" ValueChanged="slider_dimensione_ValueChanged" Loaded="slider_dimensione_Loaded">
+                <Slider.Foreground>
+                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                </Slider.Foreground>
+            </Slider>
+            <Slider x:Name="slider_opacity" HorizontalAlignment="Center" Height="32" Margin="0,92,0,0" VerticalAlignment="Top" Width="183" SmallChange="1" Maximum="100" Minimum="1" TickPlacement="BottomRight" Value="51" TickFrequency="10" Foreground="Black"/>
+            <TextBlock x:Name="testo_valore_grandezza" HorizontalAlignment="Center" Height="15" Margin="0,21,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="85"/>
+        </Grid>
+
 
 
     </Grid>

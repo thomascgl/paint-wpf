@@ -243,5 +243,31 @@ namespace paint
                 }
             }
         }
+        private void UpdateLabelPosition()
+        {
+            if (slider_dimensione.ActualWidth == 0)
+                return; // evita NullReference
+
+            testo_valore_grandezza.Text = ((int)slider_dimensione.Value).ToString();
+
+            double percent = (slider_dimensione.Value - slider_dimensione.Minimum) /
+                             (slider_dimensione.Maximum - slider_dimensione.Minimum);
+
+            double sliderWidth = slider_dimensione.ActualWidth - 20;
+            double x = percent * sliderWidth;
+
+            testo_valore_grandezza.Margin = new Thickness(x, 0, 0, -100);
+        }
+
+        private void slider_dimensione_Loaded(object sender, RoutedEventArgs e)
+        {
+            UpdateLabelPosition();
+        }
+
+        private void slider_dimensione_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            UpdateLabelPosition();
+
+        }
     }
 }
