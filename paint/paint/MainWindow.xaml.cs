@@ -243,31 +243,57 @@ namespace paint
                 }
             }
         }
-        private void UpdateLabelPosition()
+        private void UpdateLabelPosition(Slider s, TextBlock t,int pos)
         {
-            if (slider_dimensione.ActualWidth == 0)
-                return; // evita NullReference
+            if (s == null || t == null)
+                return;
 
-            testo_valore_grandezza.Text = ((int)slider_dimensione.Value).ToString();
+            // Aggiorna il testo
+            t.Text = ((int)s.Value).ToString();
 
-            double percent = (slider_dimensione.Value - slider_dimensione.Minimum) /
-                             (slider_dimensione.Maximum - slider_dimensione.Minimum);
+            // Evita calcoli prima che lo slider sia misurato
+            if (s.ActualWidth == 0)
+                return;
 
-            double sliderWidth = slider_dimensione.ActualWidth - 20;
-            double x = percent * sliderWidth;
+            // Calcolo posizione del thumb
+            double percent = (s.Value - s.Minimum) /
+                             (s.Maximum - s.Minimum);
 
-            testo_valore_grandezza.Margin = new Thickness(x, 0, 0, -100);
+            // Larghezza utile dello slider (tolgo il thumb)
+            double usableWidth = s.ActualWidth - 20;
+
+            // Posizione X del thumb
+            double x = percent * usableWidth;
+            double halfTextWidth = t.ActualWidth / 2;
+
+
+            // Sposta il TextBlock
+            t.Margin = new Thickness(x+13, pos, 0, 0);
         }
 
         private void slider_dimensione_Loaded(object sender, RoutedEventArgs e)
         {
-            UpdateLabelPosition();
+            UpdateLabelPosition(slider_dimensione,testo_valore_grandezza,19);
+            slider_dimensione.Value= paintSurface.DefaultDrawingAttributes.Width;
         }
 
         private void slider_dimensione_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            UpdateLabelPosition();
+            UpdateLabelPosition(slider_dimensione, testo_valore_grandezza,19);
+            paintSurface.DefaultDrawingAttributes.Width = slider_dimensione.Value;
+            paintSurface.DefaultDrawingAttributes.Height = slider_dimensione.Value;
+        }
 
+        private void slider_opacity_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            UpdateLabelPosition(slider_opacity, testo_opacita,87);
+
+        }
+
+        private void slider_opacity_Loaded(object sender, RoutedEventArgs e)
+        {
+            UpdateLabelPosition(slider_opacity, testo_opacita,87);
+            
         }
     }
 }
