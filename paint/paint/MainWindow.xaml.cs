@@ -295,5 +295,15 @@ namespace paint
             UpdateLabelPosition(slider_opacity, testo_opacita,87);
             
         }
+
+        private void matita_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            specifiche_matita.Visibility = Visibility.Visible;
+        }
+
+        private void specifiche_matita_MouseLeave(object sender, MouseEventArgs e)
+        {
+            specifiche_matita.Visibility = Visibility.Hidden;
+        }
     }
 }

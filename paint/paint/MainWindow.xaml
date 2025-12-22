@@ -68,7 +68,7 @@
                                     <Setter Property="CornerRadius"  Value="5"/>
                                 </Style>
                             </Border.Resources>
-                            <Image x:Name="matita" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" Width="40" Source="/matita.png" MouseDown="matita_MouseDown"/>
+                            <Image x:Name="matita" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" Width="40" Source="/matita.png" MouseDown="matita_MouseDown" MouseRightButtonDown="matita_MouseRightButtonDown"/>
                         </Border>
                         <Border x:Name="bordo_testo" BorderThickness="1" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="45" MouseEnter="bordo_testo_MouseEnter" MouseLeave="bordo_testo_MouseLeave">
                             <Border.Resources>
@@ -170,7 +170,7 @@
 
             </Label>
         </Grid>
-        <Border  HorizontalAlignment="Left" Height="162" Margin="144,88,0,0" VerticalAlignment="Top" Width="222" Style="{StaticResource GlassPanelStyle}">
+        <Border x:Name="specifiche_matita"  HorizontalAlignment="Left" Height="162" Margin="121,77,0,0" VerticalAlignment="Top" Width="222" Style="{StaticResource GlassPanelStyle}" MouseLeave="specifiche_matita_MouseLeave">
             <Grid HorizontalAlignment="Center" Height="144" VerticalAlignment="Top" Width="204" Margin="0,9,0,0">
                 <Slider x:Name="slider_dimensione"
             HorizontalAlignment="Center"
