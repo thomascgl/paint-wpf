@@ -58,6 +58,12 @@ namespace paint
         private void matita_MouseDown(object sender, MouseButtonEventArgs e)
         {
             matitaSelected = true;
+            bordoMatita.BorderBrush = Brushes.DimGray;
+            bordoMatita.BorderThickness = new Thickness(2);
+
+            gomma_border.BorderBrush = Brushes.Transparent;
+            bordo_testo.BorderBrush = Brushes.Transparent;
+            bordo_secchiello.BorderBrush = Brushes.Transparent;
             paintSurface.EditingMode = InkCanvasEditingMode.Ink;
         }
         private void gomma_border_MouseEnter(object sender, MouseEventArgs e)
@@ -74,7 +80,11 @@ namespace paint
 
         private void gomma_bordo_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            
+            bordoMatita.BorderBrush = Brushes.Transparent;
+            gomma_border.BorderBrush = Brushes.DimGray;
+            gomma_border.BorderThickness = new Thickness(2);
+            bordo_testo.BorderBrush = Brushes.Transparent;
+            bordo_secchiello.BorderBrush = Brushes.Transparent;
         }
 
         private void bordo_secchiello_MouseEnter(object sender, MouseEventArgs e)
@@ -134,7 +144,12 @@ namespace paint
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
             matitaSelected = false;
+            bordoMatita.BorderBrush = Brushes.Transparent;
+            gomma_border.BorderBrush = Brushes.DimGray;
+            bordo_testo.BorderBrush = Brushes.Transparent;
+            bordo_secchiello.BorderBrush = Brushes.Transparent;
             paintSurface.EditingMode = InkCanvasEditingMode.EraseByPoint;
+
         }
 
         private void ellisse_color_5_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -304,6 +319,54 @@ namespace paint
         private void specifiche_matita_MouseLeave(object sender, MouseEventArgs e)
         {
             specifiche_matita.Visibility = Visibility.Hidden;
+        }
+
+        private void slider_dim_gomma_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            UpdateLabelPosition(slider_dim_gomma, tblock_dim_gomma, 17);
+            paintSurface.EditingMode = InkCanvasEditingMode.None;
+            paintSurface.UpdateLayout();
+
+            // 3. Applica la nuova forma
+            paintSurface.EraserShape = new EllipseStylusShape(slider_dim_gomma.Value, slider_dim_gomma.Value); ;
+
+            // 4. Riattiva la gomma
+            paintSurface.EditingMode = InkCanvasEditingMode.EraseByPoint;
+
+
+        }
+
+        private void slider_dim_gomma_Loaded(object sender, RoutedEventArgs e)
+        {
+            UpdateLabelPosition(slider_dim_gomma, tblock_dim_gomma, 17);
+            slider_dim_gomma.Value = paintSurface.EraserShape.Width;
+
+
+        }
+
+        private void gomma_Img_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            impostazioni_gomma.Visibility= Visibility.Visible;
+        }
+
+        private void impostazioni_gomma_MouseLeave(object sender, MouseEventArgs e)
+        {
+            impostazioni_gomma.Visibility = Visibility.Hidden;  
+        }
+
+        private void bordo_testo_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void secchiello_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void bordoMatita_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
