@@ -20,12 +20,11 @@ namespace paint
     /// <summary>
     /// Logica di interazione per MainWindow.xaml
     /// </summary>
-    
+
 
     public partial class MainWindow : Window
     {
         bool matitaSelected = false;
-        Ellipse[] colori;
 
         public MainWindow()
         {
@@ -39,76 +38,18 @@ namespace paint
             };
 
             paintSurface.DefaultDrawingAttributes = inkAttributes;
-
-            colori= new Ellipse[] {colore_nero,colore_bianco,ellisse_color_1, ellisse_color_2, ellisse_color_3, ellisse_color_4, ellisse_color_5 };
         }
 
-        private void bordoMatita_MouseEnter(object sender, MouseEventArgs e)
-        {
-            bordoMatita.BorderBrush = Brushes.DimGray;
-            bordoMatita.BorderThickness = new Thickness(2);
-        }
 
-        private void bordoMatita_MouseLeave(object sender, MouseEventArgs e)
-        {
-            bordoMatita.BorderBrush = Brushes.Transparent;
-            bordoMatita.BorderThickness = new Thickness(2);
-        }
 
         private void matita_MouseDown(object sender, MouseButtonEventArgs e)
         {
             matitaSelected = true;
-            bordoMatita.BorderBrush = Brushes.DimGray;
-            bordoMatita.BorderThickness = new Thickness(2);
-
-            gomma_border.BorderBrush = Brushes.Transparent;
-            bordo_testo.BorderBrush = Brushes.Transparent;
-            bordo_secchiello.BorderBrush = Brushes.Transparent;
+            bordoMatita.Tag = "attivo";
+            gomma_border.Tag = null;
+            bordo_testo.Tag = null;
+            bordo_secchiello.Tag = null;
             paintSurface.EditingMode = InkCanvasEditingMode.Ink;
-        }
-        private void gomma_border_MouseEnter(object sender, MouseEventArgs e)
-        {
-            gomma_border.BorderBrush = Brushes.DimGray;
-            gomma_border.BorderThickness = new Thickness(2);
-        }
-
-        private void gomma_border_MouseLeave(object sender, MouseEventArgs e)
-        {
-            gomma_border.BorderBrush = Brushes.Transparent;
-            gomma_border.BorderThickness = new Thickness(2);
-        }
-
-        private void gomma_bordo_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            bordoMatita.BorderBrush = Brushes.Transparent;
-            gomma_border.BorderBrush = Brushes.DimGray;
-            gomma_border.BorderThickness = new Thickness(2);
-            bordo_testo.BorderBrush = Brushes.Transparent;
-            bordo_secchiello.BorderBrush = Brushes.Transparent;
-        }
-
-        private void bordo_secchiello_MouseEnter(object sender, MouseEventArgs e)
-        {
-            bordo_secchiello.BorderBrush = Brushes.DimGray;
-            bordo_secchiello.BorderThickness = new Thickness(2);
-        }
-
-        private void bordo_secchiello_MouseLeave(object sender, MouseEventArgs e)
-        {
-            bordo_secchiello.BorderBrush = Brushes.Transparent;
-            bordo_secchiello.BorderThickness = new Thickness(2);
-        }
-
-        private void bordo_testo_MouseEnter(object sender, MouseEventArgs e)
-        {
-            bordo_testo.BorderBrush = Brushes.DimGray;
-            bordo_testo.BorderThickness = new Thickness(2);
-        }
-
-        private void bordo_testo_MouseLeave(object sender, MouseEventArgs e)
-        {
-            bordo_testo.BorderBrush = Brushes.Transparent;
-            bordo_testo.BorderThickness = new Thickness(2);
         }
 
         private void label_freccia_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -144,121 +85,28 @@ namespace paint
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
             matitaSelected = false;
-            bordoMatita.BorderBrush = Brushes.Transparent;
-            gomma_border.BorderBrush = Brushes.DimGray;
-            bordo_testo.BorderBrush = Brushes.Transparent;
-            bordo_secchiello.BorderBrush = Brushes.Transparent;
+
             paintSurface.EditingMode = InkCanvasEditingMode.EraseByPoint;
 
         }
 
-        private void ellisse_color_5_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            ellisse_color_5.Stroke = Brushes.DimGray;
-            ellisse_color_5.StrokeThickness = 2;
-            foreach (Ellipse colore in colori)
-            {
-                if (colore != ellisse_color_5)
-                {
-                    colore.Stroke = Brushes.Black;
-                    colore.StrokeThickness = 1;
-
-                }
-            }
-        }
-
-        private void ellisse_color_4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            ellisse_color_4.Stroke = Brushes.DimGray;
-            ellisse_color_4.StrokeThickness = 2;
-            foreach (Ellipse colore in colori)
-            {
-                if (colore != ellisse_color_4)
-                {
-                    colore.Stroke = Brushes.Black;
-                    colore.StrokeThickness = 1;
-
-                }
-            }
-
-        }
-
-        private void ellisse_color_3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            ellisse_color_3.Stroke = Brushes.DimGray;
-            ellisse_color_3.StrokeThickness = 2;
-            foreach (Ellipse colore in colori)
-            {
-                if (colore != ellisse_color_3)
-                {
-                    colore.Stroke = Brushes.Black;
-                    colore.StrokeThickness = 1;
-
-                }
-            }
-        }
-
-        private void ellisse_color_2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            ellisse_color_2.Stroke = Brushes.DimGray;
-            ellisse_color_2.StrokeThickness = 2;
-            foreach (Ellipse colore in colori)
-            {
-                if (colore != ellisse_color_2)
-                {
-                    colore.Stroke = Brushes.Black;
-                    colore.StrokeThickness = 1;
-
-                }
-            }
-        }
-
-        private void ellisse_color_1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            ellisse_color_1.Stroke = Brushes.DimGray;
-            ellisse_color_1.StrokeThickness = 2;
-            foreach (Ellipse colore in colori)
-            {
-                if (colore != ellisse_color_1)
-                {
-                    colore.Stroke = Brushes.Black;
-                    colore.StrokeThickness = 1;
-
-                }
-            }   
-
-        }
 
         private void Ellipse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            colore_bianco.Stroke = Brushes.DimGray;
-            colore_bianco.StrokeThickness = 2;
-            foreach (Ellipse colore in colori)
-            {
-                if (colore != colore_bianco)
-                {
-                    colore.Stroke = Brushes.Black;
-                    colore.StrokeThickness = 1;
-
-                }
-            }
+            colore_bianco.Tag = "attivo";
+            colore_nero.Tag = null;
+            SolidColorBrush scb = (SolidColorBrush)colore_bianco.Fill;
+            paintSurface.DefaultDrawingAttributes.Color = scb.Color;
         }
 
         private void Ellipse_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
-            colore_nero.Stroke = Brushes.DimGray;
-            colore_nero.StrokeThickness = 2;
-            foreach (Ellipse colore in colori)
-            {
-                if (colore != colore_nero)
-                {
-                    colore.Stroke = Brushes.Black;
-                    colore.StrokeThickness = 1;
-
-                }
-            }
+            colore_nero.Tag = "attivo";
+            colore_bianco.Tag = null;
+            SolidColorBrush scb = (SolidColorBrush)colore_nero.Fill;
+            paintSurface.DefaultDrawingAttributes.Color = scb.Color;
         }
-        private void UpdateLabelPosition(Slider s, TextBlock t,int pos)
+        private void UpdateLabelPosition(Slider s, TextBlock t, int pos)
         {
             if (s == null || t == null)
                 return;
@@ -283,32 +131,32 @@ namespace paint
 
 
             // Sposta il TextBlock
-            t.Margin = new Thickness(x+13, pos, 0, 0);
+            t.Margin = new Thickness(x + 13, pos, 0, 0);
         }
 
         private void slider_dimensione_Loaded(object sender, RoutedEventArgs e)
         {
-            UpdateLabelPosition(slider_dimensione,testo_valore_grandezza,19);
-            slider_dimensione.Value= paintSurface.DefaultDrawingAttributes.Width;
+            UpdateLabelPosition(slider_dimensione, testo_valore_grandezza, 19);
+            slider_dimensione.Value = paintSurface.DefaultDrawingAttributes.Width;
         }
 
         private void slider_dimensione_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            UpdateLabelPosition(slider_dimensione, testo_valore_grandezza,19);
+            UpdateLabelPosition(slider_dimensione, testo_valore_grandezza, 19);
             paintSurface.DefaultDrawingAttributes.Width = slider_dimensione.Value;
             paintSurface.DefaultDrawingAttributes.Height = slider_dimensione.Value;
         }
 
         private void slider_opacity_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            UpdateLabelPosition(slider_opacity, testo_opacita,87);
+            UpdateLabelPosition(slider_opacity, testo_opacita, 87);
 
         }
 
         private void slider_opacity_Loaded(object sender, RoutedEventArgs e)
         {
-            UpdateLabelPosition(slider_opacity, testo_opacita,87);
-            
+            UpdateLabelPosition(slider_opacity, testo_opacita, 87);
+
         }
 
         private void matita_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
@@ -346,27 +194,201 @@ namespace paint
 
         private void gomma_Img_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            impostazioni_gomma.Visibility= Visibility.Visible;
+            impostazioni_gomma.Visibility = Visibility.Visible;
         }
 
         private void impostazioni_gomma_MouseLeave(object sender, MouseEventArgs e)
         {
-            impostazioni_gomma.Visibility = Visibility.Hidden;  
+            impostazioni_gomma.Visibility = Visibility.Hidden;
         }
 
-        private void bordo_testo_MouseDown(object sender, MouseButtonEventArgs e)
-        {
 
-        }
 
         private void secchiello_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            bordo_secchiello.Tag = "attivo";
+            bordoMatita.Tag = null;
+            gomma_border.Tag = null;
+            bordo_testo.Tag = null;
 
         }
 
-        private void bordoMatita_MouseDown(object sender, MouseButtonEventArgs e)
+
+        private void gomma_Img_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            bordoMatita.Tag = null;
+            gomma_border.Tag = "attivo";
+            bordo_secchiello.Tag = null;
+            bordo_testo.Tag = null;
+        }
+
+        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            bordo_testo.Tag = "attivo";
+            bordoMatita.Tag = null;
+            gomma_border.Tag = null;
+            bordo_secchiello.Tag = null;
+        }
+
+        private void ellisse_color_6_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (colore_nero.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_6.Fill;
+                colore_nero.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+            else if (colore_bianco.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_6.Fill;
+                colore_bianco.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+        }
+        private void ellisse_color_5_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (colore_nero.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_5.Fill;
+                colore_nero.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+            else if (colore_bianco.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_5.Fill;
+                colore_bianco.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+        }
+
+        private void ellisse_color_4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
+            if (colore_nero.Tag == "attivo")
+            {
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_4.Fill;
+                colore_nero.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+            else if (colore_bianco.Tag == "attivo")
+            {
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_4.Fill;
+                colore_bianco.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+        }
+
+        private void ellisse_color_3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (colore_nero.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_3.Fill;
+                colore_nero.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+            else if (colore_bianco.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_3.Fill;
+                colore_bianco.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+        }
+
+        private void ellisse_color_2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (colore_nero.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_2.Fill;
+                colore_nero.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+            else if (colore_bianco.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_2.Fill;
+                colore_bianco.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+        }
+
+        private void ellisse_color_1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (colore_nero.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_1.Fill;
+                colore_nero.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+            else if (colore_bianco.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_1.Fill;
+                colore_bianco.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+        }
+
+        private void ellisse_color_7_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (colore_nero.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_7.Fill;
+                colore_nero.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+            else if (colore_bianco.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_7.Fill;
+                colore_bianco.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+        }
+
+        private void ellisse_color_8_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (colore_nero.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_8.Fill;
+                colore_nero.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+            else if (colore_bianco.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_8.Fill;
+                colore_bianco.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+        }
+
+        private void ellisse_color_9_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (colore_nero.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_9.Fill;
+                colore_nero.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
+            else if (colore_bianco.Tag == "attivo")
+            {
+
+                SolidColorBrush scb = (SolidColorBrush)ellisse_color_9.Fill;
+                colore_bianco.Fill = scb;
+                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+            }
         }
     }
 }
+    
