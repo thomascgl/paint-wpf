@@ -21,10 +21,8 @@ namespace paint
     /// Logica di interazione per MainWindow.xaml
     /// </summary>
 
-
     public partial class MainWindow : Window
     {
-        bool matitaSelected = false;
 
         public MainWindow()
         {
@@ -38,13 +36,13 @@ namespace paint
             };
 
             paintSurface.DefaultDrawingAttributes = inkAttributes;
+            paintSurface.EditingMode = InkCanvasEditingMode.Ink;
         }
 
 
 
         private void matita_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            matitaSelected = true;
             bordoMatita.Tag = "attivo";
             gomma_border.Tag = null;
             bordo_testo.Tag = null;
@@ -84,12 +82,8 @@ namespace paint
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            matitaSelected = false;
-
             paintSurface.EditingMode = InkCanvasEditingMode.EraseByPoint;
-
         }
-
 
         private void Ellipse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
