@@ -37,6 +37,8 @@ namespace paint
 
             paintSurface.DefaultDrawingAttributes = inkAttributes;
             paintSurface.EditingMode = InkCanvasEditingMode.Ink;
+
+            colore_nero.Tag = "attivo";
         }
 
 
