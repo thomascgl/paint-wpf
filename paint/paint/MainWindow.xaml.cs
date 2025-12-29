@@ -226,165 +226,29 @@ namespace paint
             bordo_secchiello.Tag = null;
         }
 
-        private void ellisse_color_6_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        //quando uno delle ellissi dei colori viene premuto nella finestra si entra qui
+        private void ellisse_color_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (colore_nero.Tag == "attivo")
+            //prendiamo il pulsante specifico grazie a object sender nei parametri che è l'ellissi premuto
+            //con questa linea qui sotto verifichiamo per sicurezza che sia un ellisse e salviamo l'oggetto in una variabile
+            if (sender is Ellipse ellipse)
             {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_6.Fill;
-                colore_nero.Fill = scb;
+                //ora prendiamo il colore dell'ellisse e lo diamo alla penna
+                SolidColorBrush scb = (SolidColorBrush)ellipse.Fill;
                 paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-            else if (colore_bianco.Tag == "attivo")
-            {
 
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_6.Fill;
-                colore_bianco.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-        }
-        private void ellisse_color_5_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (colore_nero.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_5.Fill;
-                colore_nero.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-            else if (colore_bianco.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_5.Fill;
-                colore_bianco.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+                if (colore_nero.Tag == "attivo")
+                {
+                    colore_nero.Fill = scb;
+                }
+                else if (colore_bianco.Tag == "attivo")
+                {
+                    colore_bianco.Fill = scb;
+                }
             }
         }
 
-        private void ellisse_color_4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-            if (colore_nero.Tag == "attivo")
-            {
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_4.Fill;
-                colore_nero.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-            else if (colore_bianco.Tag == "attivo")
-            {
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_4.Fill;
-                colore_bianco.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-        }
-
-        private void ellisse_color_3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (colore_nero.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_3.Fill;
-                colore_nero.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-            else if (colore_bianco.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_3.Fill;
-                colore_bianco.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-        }
-
-        private void ellisse_color_2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (colore_nero.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_2.Fill;
-                colore_nero.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-            else if (colore_bianco.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_2.Fill;
-                colore_bianco.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-        }
-
-        private void ellisse_color_1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (colore_nero.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_1.Fill;
-                colore_nero.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-            else if (colore_bianco.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_1.Fill;
-                colore_bianco.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-        }
-
-        private void ellisse_color_7_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (colore_nero.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_7.Fill;
-                colore_nero.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-            else if (colore_bianco.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_7.Fill;
-                colore_bianco.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-        }
-
-        private void ellisse_color_8_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (colore_nero.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_8.Fill;
-                colore_nero.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-            else if (colore_bianco.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_8.Fill;
-                colore_bianco.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-        }
-
-        private void ellisse_color_9_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (colore_nero.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_9.Fill;
-                colore_nero.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-            else if (colore_bianco.Tag == "attivo")
-            {
-
-                SolidColorBrush scb = (SolidColorBrush)ellisse_color_9.Fill;
-                colore_bianco.Fill = scb;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
-            }
-        }
+        
     }
 }
     
