@@ -96,21 +96,21 @@
                         <Label Content="Strumenti" HorizontalAlignment="Center" Height="22" VerticalAlignment="Center" Width="102" Background="Transparent" Foreground="#FFA4A4A4" Padding="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     </WrapPanel>
                     <WrapPanel HorizontalAlignment="Center" Height="274" Margin="0,130,0,0" VerticalAlignment="Top" Width="102">
-                        <Border x:Name="bordo_colore_nero" BorderThickness="1" Height="40" Width="52" >
+                        <Border x:Name="bordo_colore_sinistra" BorderThickness="1" Height="40" Width="52" >
                             <Border.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius"  Value="100"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="colore_nero" HorizontalAlignment="Center" Height="36" VerticalAlignment="Center" Width="36" Fill="Black"  Style="{StaticResource passaggio}" StrokeThickness="2" MouseLeftButtonDown="Ellipse_MouseLeftButtonDown_1"/>
+                            <Ellipse x:Name="colore_sinistra" HorizontalAlignment="Center" Height="36" VerticalAlignment="Center" Width="36" Fill="Black"  Style="{StaticResource passaggio}" StrokeThickness="2" MouseLeftButtonDown="Ellipse_MouseLeftButtonDown_sinistra"/>
                         </Border>
-                        <Border x:Name="bordo_colore_bianco" BorderThickness="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="50">
+                        <Border x:Name="bordo_colore_destra" BorderThickness="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="50">
                             <Border.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="colore_bianco" HorizontalAlignment="Center" Height="36"  VerticalAlignment="Center" Width="36" Fill="White" Style="{StaticResource passaggio}" MouseLeftButtonDown="Ellipse_MouseLeftButtonDown"/>
+                            <Ellipse x:Name="colore_destra" HorizontalAlignment="Center" Height="36"  VerticalAlignment="Center" Width="36" Fill="White" Style="{StaticResource passaggio}" MouseLeftButtonDown="Ellipse_MouseLeftButtonDown_destra"/>
                         </Border>
                         <Border x:Name="personalizzato_1" BorderThickness="1" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="34" >
                             <Border.Resources>

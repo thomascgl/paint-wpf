@@ -38,7 +38,7 @@ namespace paint
             paintSurface.DefaultDrawingAttributes = inkAttributes;
             paintSurface.EditingMode = InkCanvasEditingMode.Ink;
 
-            colore_nero.Tag = "attivo";
+            colore_sinistra.Tag = "attivo";
         }
 
 
@@ -87,21 +87,22 @@ namespace paint
             paintSurface.EditingMode = InkCanvasEditingMode.EraseByPoint;
         }
 
-        private void Ellipse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Ellipse_MouseLeftButtonDown_destra(object sender, MouseButtonEventArgs e)
         {
-            colore_bianco.Tag = "attivo";
-            colore_nero.Tag = null;
-            SolidColorBrush scb = (SolidColorBrush)colore_bianco.Fill;
+            colore_destra.Tag = "attivo";
+            colore_sinistra.Tag = null;
+            SolidColorBrush scb = (SolidColorBrush)colore_destra.Fill;
             paintSurface.DefaultDrawingAttributes.Color = scb.Color;
         }
 
-        private void Ellipse_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        private void Ellipse_MouseLeftButtonDown_sinistra(object sender, MouseButtonEventArgs e)
         {
-            colore_nero.Tag = "attivo";
-            colore_bianco.Tag = null;
-            SolidColorBrush scb = (SolidColorBrush)colore_nero.Fill;
+            colore_sinistra.Tag = "attivo";
+            colore_destra.Tag = null;
+            SolidColorBrush scb = (SolidColorBrush)colore_destra.Fill;
             paintSurface.DefaultDrawingAttributes.Color = scb.Color;
         }
+
         private void UpdateLabelPosition(Slider s, TextBlock t, int pos)
         {
             if (s == null || t == null)
@@ -237,13 +238,13 @@ namespace paint
                 SolidColorBrush scb = (SolidColorBrush)ellipse.Fill;
                 paintSurface.DefaultDrawingAttributes.Color = scb.Color;
 
-                if (colore_nero.Tag == "attivo")
+                if (colore_sinistra.Tag == "attivo")
                 {
-                    colore_nero.Fill = scb;
+                    colore_sinistra.Fill = scb;
                 }
-                else if (colore_bianco.Tag == "attivo")
+                else if (colore_destra.Tag == "attivo")
                 {
-                    colore_bianco.Fill = scb;
+                    colore_destra.Fill = scb;
                 }
             }
         }
