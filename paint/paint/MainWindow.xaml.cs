@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,13 +8,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Ink;
 
 namespace paint
 {
@@ -199,8 +200,6 @@ namespace paint
             impostazioni_gomma.Visibility = Visibility.Hidden;
         }
 
-
-
         private void secchiello_MouseDown(object sender, MouseButtonEventArgs e)
         {
             bordo_secchiello.Tag = "attivo";
@@ -209,7 +208,6 @@ namespace paint
             bordo_testo.Tag = null;
 
         }
-
 
         private void gomma_Img_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -249,7 +247,44 @@ namespace paint
             }
         }
 
-        
+        private void SalvaCanvas_Button_Click(object sender, RoutedEventArgs e)
+        {
+            string nomeCartella = "Disegni_Salvati";
+            /* TODO: per ora abbiamo un solo file, ma in futuro vorrei fare in modo di poter
+                creare un nuovo file file o sovrasrivere quello attuale;
+                per questo motivo li ho piazzati in una cartella separata
+            */
+            string percorsoFile = nomeCartella + "\\Disegno.ink";
+
+            if (!Directory.Exists(nomeCartella))
+            {
+                Directory.CreateDirectory(nomeCartella);
+            }
+
+            //inkCanvas salva gli strokes su uno stream
+            //se il file non esiste lo crea, se esiste lo sovrascrive
+            FileStream inkFileStream = new FileStream(percorsoFile, FileMode.Create);
+
+            //salva il disegno
+            paintSurface.Strokes.Save(inkFileStream);
+            inkFileStream.Close();
+        }
+
+        private void CaricaCanvas_Button_Click(object sender, RoutedEventArgs e)
+        {
+            string nomeCartella = "Disegni_Salvati";
+            string percorsoFile = nomeCartella + "\\Disegno.ink";
+
+            // If our file exists,
+            if (File.Exists(percorsoFile))
+            {
+                FileStream inkFileStream = new FileStream(percorsoFile, FileMode.Open, FileAccess.Read);
+                StrokeCollection strokes = new StrokeCollection(inkFileStream);
+                inkFileStream.Close();
+
+                paintSurface.Strokes = strokes;
+            }
+        }
     }
 }
     

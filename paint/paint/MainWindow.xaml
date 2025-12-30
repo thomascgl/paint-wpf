@@ -316,11 +316,12 @@
                 Foreground="Black"/>
             </Grid>
         </Border>
-
+        
+        <Button Content="Salva" HorizontalAlignment="Left" Margin="232,47,0,0" VerticalAlignment="Top" Height="41" Width="110" FontSize="20" Click="SalvaCanvas_Button_Click"/>
+        <Button Content="Carica" HorizontalAlignment="Left" Margin="388,47,0,0" VerticalAlignment="Top" Height="41" Width="110" FontSize="20" Click="CaricaCanvas_Button_Click"/>
 
 
 
     </Grid>
-
 
 </Window>
