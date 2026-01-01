@@ -285,6 +285,11 @@ namespace paint
                 paintSurface.Strokes = strokes;
             }
         }
+
+        private void paintSurface_DragEnter(object sender, DragEventArgs e)
+        {
+            posizione_cursore.Content = e.GetPosition(paintSurface);
+        }
     }
 }
     

@@ -63,7 +63,7 @@
     <!-- canvas area -->
     <Grid Background="#FFC3C3C3">
 
-        <InkCanvas Name="paintSurface" Margin="288,164,25,68">
+        <InkCanvas Name="paintSurface" Margin="288,164,25,68" DragEnter="paintSurface_DragEnter">
             <InkCanvas.Background>
                 <SolidColorBrush Color="White" Opacity="1"/>
             </InkCanvas.Background>
@@ -316,9 +316,15 @@
                 Foreground="Black"/>
             </Grid>
         </Border>
-        
+
         <Button Content="Salva" HorizontalAlignment="Left" Margin="232,47,0,0" VerticalAlignment="Top" Height="41" Width="110" FontSize="20" Click="SalvaCanvas_Button_Click"/>
         <Button Content="Carica" HorizontalAlignment="Left" Margin="388,47,0,0" VerticalAlignment="Top" Height="41" Width="110" FontSize="20" Click="CaricaCanvas_Button_Click"/>
+        <Border BorderBrush="{x:Null}" BorderThickness="2,2,2,2" HorizontalAlignment="Center" Width="1216" Style="{StaticResource GlassPanelStyle}" CornerRadius="0,0,0,0" Height="30" VerticalAlignment="Bottom">
+            <Grid HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="1216" Margin="-2,0,0,0">
+                <Label x:Name="posizione_cursore" Content="0,0" HorizontalAlignment="Left" Height="16" VerticalAlignment="Center" Width="64" Padding="1,0,1,3" Margin="31,0,0,0" VerticalContentAlignment="Center"/>
+                <Image HorizontalAlignment="Left" Height="20" VerticalAlignment="Center" Width="20" Source="/cursore1.png" Stretch="Fill" Margin="6,0,0,0"/>
+            </Grid>
+        </Border>
 
 
 
