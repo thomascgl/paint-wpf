@@ -105,22 +105,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-<<<<<<< Updated upstream
-        <Border BorderBrush="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Height="180" Margin="299,36,0,0" VerticalAlignment="Top" Style="{StaticResource GlassPanelStyle}" Width="172">
-            <Grid HorizontalAlignment="Center" Height="154" VerticalAlignment="Top" Width="162" Margin="0,9,0,0">
-                <Label Content="Red:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,2,0,0" Width="44" Height="25" FontSize="13"/>
-                <Label Content="Green:" HorizontalAlignment="Left" Margin="23,29,0,0" VerticalAlignment="Top" FontSize="13"/>
-                <Label Content="Blue:" HorizontalAlignment="Left" Margin="23,59,0,0" VerticalAlignment="Top" Width="44" FontSize="13"/>
-                <Rectangle HorizontalAlignment="Left" Height="25" Margin="0,2,0,0" VerticalAlignment="Top" Width="25" Fill="Red" />
-                <Rectangle HorizontalAlignment="Left" Height="24" Margin="0,32,0,0" VerticalAlignment="Top" Width="25" Fill="Lime"/>
-                <Rectangle HorizontalAlignment="Left" Height="26" Margin="0,60,0,0" VerticalAlignment="Top" Width="25" Fill="Blue"/>
-                <TextBox HorizontalAlignment="Left" Height="25" Margin="67,2,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="86" BorderThickness="0,0,0,2" BorderBrush="Red" Padding="0,5,0,0"/>
-                <TextBox HorizontalAlignment="Left" Height="25" Margin="67,31,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="86" BorderThickness="0,0,0,2" BorderBrush="Lime" Padding="0,5,0,0"/>
-                <TextBox HorizontalAlignment="Left" Height="25" Margin="67,60,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="86" BorderThickness="0,0,0,2" BorderBrush="Blue" Padding="0,5,0,0"/>
-                <Label Content="Hex:" HorizontalAlignment="Left" Margin="23,86,0,0" VerticalAlignment="Top" Width="44" FontSize="13"/>
-                <TextBox HorizontalAlignment="Left" Height="25" Margin="67,87,0,0" TextWrapping="Wrap" Text="#000000" VerticalAlignment="Top" Width="86" BorderThickness="0,0,0,2" BorderBrush="Black" Padding="0,5,0,0"/>
-                <Rectangle x:Name="RettangoloPreviewColore"  Height="35" Margin="0,119,0,0" Stroke="Black" VerticalAlignment="Top"/>
-=======
+       
         <Border BorderBrush="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Margin="299,33,0,23" Style="{StaticResource GlassPanelStyle}" Width="172">
             <Grid HorizontalAlignment="Center" Height="198" VerticalAlignment="Center" Width="132">
                 <Label Content="Red" HorizontalAlignment="Left" VerticalAlignment="Top" Width="44" Height="25" FontSize="13"/>
@@ -148,7 +133,6 @@
                 </Button>
                 <Rectangle x:Name="new_color" HorizontalAlignment="Left" Height="24" Margin="68,132,0,0" VerticalAlignment="Top" Width="58" Fill="#FFE2C1C1"/>
                 <Rectangle x:Name="old_color" HorizontalAlignment="Left" Height="24" Margin="10,132,0,0" VerticalAlignment="Top" Width="58" Fill="White"/>
->>>>>>> Stashed changes
             </Grid>
         </Border>
 

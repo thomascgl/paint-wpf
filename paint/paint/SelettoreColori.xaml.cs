@@ -19,21 +19,19 @@ namespace paint
     /// </summary>
     public partial class SelettoreColori : Window
     {
-<<<<<<< Updated upstream
         private Color hoveredColor; //la variabile è in inglese perchè non so come dirlo in italiano
         public Color coloreScelto;
         public bool confermato;
 
-=======
+
         
->>>>>>> Stashed changes
         public SelettoreColori()
         {
             InitializeComponent();
 
             coloreScelto = Color.FromRgb(0, 0, 0);
             confermato = false;
-            RettangoloPreviewColore.Fill = new SolidColorBrush(coloreScelto);
+            new_color.Fill = new SolidColorBrush(coloreScelto);
         }
 
         private void Conferma_Button_Click(object sender, RoutedEventArgs e)
@@ -41,12 +39,11 @@ namespace paint
             confermato = true;
             this.Close();
         }
-<<<<<<< Updated upstream
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
             coloreScelto = hoveredColor;
-            RettangoloPreviewColore.Fill = new SolidColorBrush(coloreScelto);
+            new_color.Fill = new SolidColorBrush(coloreScelto);
             //TODO: fare in modo che le tre textBox prendano il valore rgb e lo mostrino
             // inoltre se cambi il valore rgb nelle textBox, viene messo quello come coloreScelto
         }
@@ -97,7 +94,14 @@ namespace paint
 
             //salviamo il colore nella variabile che andrà alla MainWindow e lo mettiamo nel rettangolo di anteprima
             hoveredColor = Color.FromArgb(pixels[3], pixels[2], pixels[1], pixels[0]);
-=======
+            red_text.Text = hoveredColor.R.ToString();
+            green_text.Text = hoveredColor.G.ToString();
+            blue_text.Text = hoveredColor.B.ToString();
+            hex_text.Text = string.Format("#{0:X2}{1:X2}{2:X2}", hoveredColor.R, hoveredColor.G, hoveredColor.B);
+            Brush b = new SolidColorBrush(hoveredColor);
+            new_color.Fill = b;
+        }
+
         private void quadrato_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             //prendiamo il pulsante specifico grazie a object sender nei parametri che è l'ellissi premuto
@@ -116,7 +120,6 @@ namespace paint
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
->>>>>>> Stashed changes
         }
     }
 }
