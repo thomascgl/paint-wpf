@@ -290,6 +290,11 @@ namespace paint
         {
             posizione_cursore.Content = e.GetPosition(paintSurface);
         }
+        private void CustomColor_Button_Click(object sender, RoutedEventArgs e)
+        {
+            SelettoreColori finestraSelettore = new SelettoreColori();
+            finestraSelettore.ShowDialog();
+        }
     }
 }
     

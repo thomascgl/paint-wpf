@@ -79,7 +79,7 @@
                         </WrapPanel.Resources>
                         <Border x:Name="bordoMatita" Style="{StaticResource bStrumenti}" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="45" BorderThickness="2">
 
-                            <Image x:Name="matita" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" Width="40" Source="/matita.png" MouseDown="matita_MouseDown" MouseRightButtonDown="matita_MouseRightButtonDown"/>
+                            <Image x:Name="matita" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" Width="40" Source="Immagini/matita.png" MouseDown="matita_MouseDown" MouseRightButtonDown="matita_MouseRightButtonDown"/>
                         </Border>
                         <Border x:Name="bordo_testo" Style="{StaticResource bStrumenti}"  HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="45">
 
@@ -87,11 +87,11 @@
                         </Border>
                         <Border x:Name="gomma_border" Style="{StaticResource bStrumenti}" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="45">
 
-                            <Image x:Name="gomma_Img" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" Width="40" Source="/gomma.png" MouseDown="Image_MouseDown" MouseRightButtonDown="gomma_Img_MouseRightButtonDown" MouseLeftButtonDown="gomma_Img_MouseLeftButtonDown"/>
+                            <Image x:Name="gomma_Img" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" Width="40" Source="Immagini/gomma.png" MouseDown="Image_MouseDown" MouseRightButtonDown="gomma_Img_MouseRightButtonDown" MouseLeftButtonDown="gomma_Img_MouseLeftButtonDown"/>
                         </Border>
                         <Border x:Name="bordo_secchiello" Style="{StaticResource bStrumenti}" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="45">
 
-                            <Image x:Name="secchiello" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" Width="40" Source="/secchiello 2.png" MouseDown="secchiello_MouseDown"/>
+                            <Image x:Name="secchiello" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center" Width="40" Source="Immagini/secchiello 2.png" MouseDown="secchiello_MouseDown"/>
                         </Border>
                         <Label Content="Strumenti" HorizontalAlignment="Center" Height="22" VerticalAlignment="Center" Width="102" Background="Transparent" Foreground="#FFA4A4A4" Padding="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     </WrapPanel>
@@ -239,7 +239,7 @@
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Label Content="+" HorizontalAlignment="Right" Height="30" VerticalAlignment="Center" Width="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Padding="5,0,5,5" Margin="0,0,1,0"/>
+                            <Button Content="+" HorizontalAlignment="Right" Height="30" VerticalAlignment="Center" Width="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Padding="5,0,5,5" Margin="0,0,1,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="CustomColor_Button_Click"/>
                         </Border>
                         <Label Content="Colori" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="102" Padding="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Transparent" Foreground="#FFABA5AC"/>
                     </WrapPanel>
