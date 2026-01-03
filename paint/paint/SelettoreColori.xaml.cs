@@ -46,6 +46,13 @@ namespace paint
             new_color.Fill = new SolidColorBrush(coloreScelto);
             //TODO: fare in modo che le tre textBox prendano il valore rgb e lo mostrino
             // inoltre se cambi il valore rgb nelle textBox, viene messo quello come coloreScelto
+            //inserisce codice colore nelle textBox convertendo in hex e inserendolo nel nuovo colore
+            red_text.Text = hoveredColor.R.ToString();
+            green_text.Text = hoveredColor.G.ToString();
+            blue_text.Text = hoveredColor.B.ToString();
+            hex_text.Text = string.Format("#{0:X2}{1:X2}{2:X2}", hoveredColor.R, hoveredColor.G, hoveredColor.B);
+            Brush b = new SolidColorBrush(hoveredColor);
+            new_color.Fill = b;
         }
 
         private void Image_MouseMove(object sender, MouseEventArgs e)
@@ -94,21 +101,15 @@ namespace paint
 
             //salviamo il colore nella variabile che andrà alla MainWindow e lo mettiamo nel rettangolo di anteprima
             hoveredColor = Color.FromArgb(pixels[3], pixels[2], pixels[1], pixels[0]);
-            red_text.Text = hoveredColor.R.ToString();
-            green_text.Text = hoveredColor.G.ToString();
-            blue_text.Text = hoveredColor.B.ToString();
-            hex_text.Text = string.Format("#{0:X2}{1:X2}{2:X2}", hoveredColor.R, hoveredColor.G, hoveredColor.B);
-            Brush b = new SolidColorBrush(hoveredColor);
-            new_color.Fill = b;
+            
         }
 
         private void quadrato_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //prendiamo il pulsante specifico grazie a object sender nei parametri che è l'ellissi premuto
-            //con questa linea qui sotto verifichiamo per sicurezza che sia un ellisse e salviamo l'oggetto in una variabile
+            
+            //codice riutilizzato per la selezione dei colori di default(cri sei un grande)
             if (sender is Rectangle rec)
             {
-                //ora prendiamo il colore dell'ellisse e lo diamo alla penna
                 SolidColorBrush scb = (SolidColorBrush)rec.Fill;
                 red_text.Text=scb.Color.R.ToString();
                 green_text.Text=scb.Color.G.ToString();
