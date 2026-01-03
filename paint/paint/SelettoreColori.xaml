@@ -5,17 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:paint"
         mc:Ignorable="d"
-        Title="Selettore Colori" Height="400" Width="500">
-    <Grid>
-        <Label Content="DA FINIRE, questa è una demo grafica" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" Height="40" Width="500" FontSize="22"/>
-        <Image HorizontalAlignment="Center" Height="156" Margin="0,60,0,0" VerticalAlignment="Top" Width="269" Source="Immagini/RGB_ColorSpectrum.png" Stretch="Fill"/>
-        <Label Content="Rosso" HorizontalAlignment="Left" Margin="64,246,0,0" VerticalAlignment="Top"/>
-        <Label Content="Verde" HorizontalAlignment="Left" Margin="64,277,0,0" VerticalAlignment="Top"/>
-        <Label Content="Blu" HorizontalAlignment="Left" Margin="64,308,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="130,246,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="69" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Margin="130,277,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="69" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Margin="130,308,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="69" Height="26"/>
-        <Button Content="Conferma" HorizontalAlignment="Left" Margin="65,339,0,0" VerticalAlignment="Top" Width="134" Background="#FF00FA23" Click="Conferma_Button_Click"/>
+        Title="Selettore Colori" Height="290" Width="500">
+    <Window.Resources>
+        <Style x:Key="GlassPanelStyle" TargetType="Border">
+            <!-- Forma -->
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="BorderThickness" Value="1"/>
+
+            <!-- Colori vetro -->
+            <Setter Property="Background" Value="#70FFFFFF"/>
+            <Setter Property="BorderBrush" Value="#40FFFFFF"/>
+
+            <!-- Rendering -->
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+
+            <!-- Ombra -->
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="25"
+                      ShadowDepth="0"
+                      Color="Black"
+                      Opacity="0.25"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FFC3C3C3">
+        <Button Content="Conferma" HorizontalAlignment="Left" Margin="318,236,0,0" VerticalAlignment="Top" Width="134" Background="#FF00FA23" Click="Conferma_Button_Click"/>
+        <TabControl HorizontalAlignment="Left" Height="246" Margin="10,10,0,0" VerticalAlignment="Top" Width="264" IsSynchronizedWithCurrentItem="True">
+            <TabItem Header="default">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="personalizzati">
+                <Grid Background="#FFE5E5E5">
+                    <Image HorizontalAlignment="Left" Height="220" VerticalAlignment="Top" Width="220" Source="Immagini/RGB_ColorSpectrum.png" Stretch="Fill"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Border BorderBrush="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Height="180" Margin="299,36,0,0" VerticalAlignment="Top" Style="{StaticResource GlassPanelStyle}" Width="172">
+            <Grid HorizontalAlignment="Center" Height="154" VerticalAlignment="Top" Width="162" Margin="0,9,0,0">
+                <Label Content="Red:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,2,0,0" Width="44" Height="25" FontSize="13"/>
+                <Label Content="Green:" HorizontalAlignment="Left" Margin="23,29,0,0" VerticalAlignment="Top" FontSize="13"/>
+                <Label Content="Blue:" HorizontalAlignment="Left" Margin="23,59,0,0" VerticalAlignment="Top" Width="44" FontSize="13"/>
+                <Rectangle HorizontalAlignment="Left" Height="25" Margin="0,2,0,0" VerticalAlignment="Top" Width="25" Fill="Red" />
+                <Rectangle HorizontalAlignment="Left" Height="24" Margin="0,32,0,0" VerticalAlignment="Top" Width="25" Fill="Lime"/>
+                <Rectangle HorizontalAlignment="Left" Height="26" Margin="0,60,0,0" VerticalAlignment="Top" Width="25" Fill="Blue"/>
+                <TextBox HorizontalAlignment="Left" Height="25" Margin="67,2,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="86" BorderThickness="0,0,0,2" BorderBrush="Red" Padding="0,5,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="25" Margin="67,31,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="86" BorderThickness="0,0,0,2" BorderBrush="Lime" Padding="0,5,0,0"/>
+                <TextBox HorizontalAlignment="Left" Height="25" Margin="67,60,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="86" BorderThickness="0,0,0,2" BorderBrush="Blue" Padding="0,5,0,0"/>
+                <Label Content="Hex:" HorizontalAlignment="Left" Margin="23,86,0,0" VerticalAlignment="Top" Width="44" FontSize="13"/>
+                <TextBox HorizontalAlignment="Left" Height="25" Margin="67,87,0,0" TextWrapping="Wrap" Text="#000000" VerticalAlignment="Top" Width="86" BorderThickness="0,0,0,2" BorderBrush="Black" Padding="0,5,0,0"/>
+            </Grid>
+        </Border>
 
     </Grid>
 </Window>
