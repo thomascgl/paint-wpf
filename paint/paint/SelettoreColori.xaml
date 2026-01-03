@@ -39,7 +39,7 @@
             </TabItem>
             <TabItem Header="personalizzati">
                 <Grid Background="#FFE5E5E5">
-                    <Image HorizontalAlignment="Left" Height="220" VerticalAlignment="Top" Width="220" Source="Immagini/RGB_ColorSpectrum.png" Stretch="Fill"/>
+                    <Image x:Name="ImageColore" HorizontalAlignment="Center" Height="220" VerticalAlignment="Center" Width="258" Source="Immagini/RGB_ColorSpectrum.png" Stretch="Fill" MouseDown="Image_MouseDown" MouseMove="Image_MouseMove"/>
                 </Grid>
             </TabItem>
         </TabControl>
@@ -56,6 +56,7 @@
                 <TextBox HorizontalAlignment="Left" Height="25" Margin="67,60,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="86" BorderThickness="0,0,0,2" BorderBrush="Blue" Padding="0,5,0,0"/>
                 <Label Content="Hex:" HorizontalAlignment="Left" Margin="23,86,0,0" VerticalAlignment="Top" Width="44" FontSize="13"/>
                 <TextBox HorizontalAlignment="Left" Height="25" Margin="67,87,0,0" TextWrapping="Wrap" Text="#000000" VerticalAlignment="Top" Width="86" BorderThickness="0,0,0,2" BorderBrush="Black" Padding="0,5,0,0"/>
+                <Rectangle x:Name="RettangoloPreviewColore"  Height="35" Margin="0,119,0,0" Stroke="Black" VerticalAlignment="Top"/>
             </Grid>
         </Border>
 

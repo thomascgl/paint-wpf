@@ -294,6 +294,26 @@ namespace paint
         {
             SelettoreColori finestraSelettore = new SelettoreColori();
             finestraSelettore.ShowDialog();
+
+            if (finestraSelettore.confermato)
+            {
+                //TODO: per ora va nel primo elisse per testare
+                // in futuro passare al prossimo elisse quando quello precedente è già pieno
+                // se tutti sono occupati si sovrascrive il primo e ri-inizia il giro, sovrasrivendo i colri vecchi
+                Color colore = finestraSelettore.coloreScelto;
+                ellisse_Customcolor_1.Fill = new SolidColorBrush(colore);
+
+                //viene reso il colore selezionato
+                paintSurface.DefaultDrawingAttributes.Color = colore;
+                if (colore_sinistra.Tag == "attivo")
+                {
+                    colore_sinistra.Fill = new SolidColorBrush(colore);
+                }
+                else if (colore_destra.Tag == "attivo")
+                {
+                    colore_destra.Fill = new SolidColorBrush(colore);
+                }
+            }
         }
     }
 }

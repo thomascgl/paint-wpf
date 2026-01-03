@@ -191,7 +191,7 @@
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="ellisse_color_10" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" MouseLeftButtonDown="ellisse_color_MouseLeftButtonDown" Stroke="Black"/>
+                            <Ellipse x:Name="ellisse_Customcolor_1" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" MouseLeftButtonDown="ellisse_color_MouseLeftButtonDown" Stroke="Black"/>
                         </Border>
                         <Border x:Name="personalizzato_5_Copia5" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
                             <Border.Resources>
@@ -199,7 +199,7 @@
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="ellisse_color_11" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" MouseLeftButtonDown="ellisse_color_MouseLeftButtonDown" Stroke="Black"/>
+                            <Ellipse x:Name="ellisse_Customcolor_2" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" MouseLeftButtonDown="ellisse_color_MouseLeftButtonDown" Stroke="Black"/>
                         </Border>
                         <Border x:Name="personalizzato_5_Copia6" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
                             <Border.Resources>
@@ -207,7 +207,7 @@
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="ellisse_color_12" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" MouseLeftButtonDown="ellisse_color_MouseLeftButtonDown" Stroke="Black"/>
+                            <Ellipse x:Name="ellisse_Customcolor_3" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" MouseLeftButtonDown="ellisse_color_MouseLeftButtonDown" Stroke="Black"/>
                         </Border>
                         <Border x:Name="personalizzato_5_Copia7" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
                             <Border.Resources>
@@ -215,7 +215,7 @@
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="ellisse_color_13" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Bottom" Width="30" MouseLeftButtonDown="ellisse_color_MouseLeftButtonDown" Stroke="Black" Margin="0,0,0,1"/>
+                            <Ellipse x:Name="ellisse_Customcolor_4" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Bottom" Width="30" MouseLeftButtonDown="ellisse_color_MouseLeftButtonDown" Stroke="Black" Margin="0,0,0,1"/>
                         </Border>
                         <Border x:Name="personalizzato_5_Copia8" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
                             <Border.Resources>
@@ -223,7 +223,7 @@
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="ellisse_color_14" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" MouseLeftButtonDown="ellisse_color_MouseLeftButtonDown" Stroke="Black"/>
+                            <Ellipse x:Name="ellisse_Customcolor_5" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" MouseLeftButtonDown="ellisse_color_MouseLeftButtonDown" Stroke="Black"/>
                         </Border>
                         <Border x:Name="personalizzato_5_Copia9" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
                             <Border.Resources>
@@ -231,7 +231,7 @@
                                     <Setter Property="CornerRadius"  Value="20"/>
                                 </Style>
                             </Border.Resources>
-                            <Ellipse x:Name="ellisse_color_15" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" MouseLeftButtonDown="ellisse_color_MouseLeftButtonDown" Stroke="Black"/>
+                            <Ellipse x:Name="ellisse_Customcolor_6" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="30" MouseLeftButtonDown="ellisse_color_MouseLeftButtonDown" Stroke="Black"/>
                         </Border>
                         <Border x:Name="aggiungi_colore" BorderThickness="1" HorizontalAlignment="Center" Height="34" VerticalAlignment="Center" Width="34">
                             <Border.Resources>
