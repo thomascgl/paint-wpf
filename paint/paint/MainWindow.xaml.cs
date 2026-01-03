@@ -100,7 +100,7 @@ namespace paint
         {
             colore_sinistra.Tag = "attivo";
             colore_destra.Tag = null;
-            SolidColorBrush scb = (SolidColorBrush)colore_destra.Fill;
+            SolidColorBrush scb = (SolidColorBrush)colore_sinistra.Fill;
             paintSurface.DefaultDrawingAttributes.Color = scb.Color;
         }
 
