@@ -19,10 +19,14 @@ namespace paint
     /// </summary>
     public partial class SelettoreColori : Window
     {
+<<<<<<< Updated upstream
         private Color hoveredColor; //la variabile è in inglese perchè non so come dirlo in italiano
         public Color coloreScelto;
         public bool confermato;
 
+=======
+        
+>>>>>>> Stashed changes
         public SelettoreColori()
         {
             InitializeComponent();
@@ -37,6 +41,7 @@ namespace paint
             confermato = true;
             this.Close();
         }
+<<<<<<< Updated upstream
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -92,6 +97,26 @@ namespace paint
 
             //salviamo il colore nella variabile che andrà alla MainWindow e lo mettiamo nel rettangolo di anteprima
             hoveredColor = Color.FromArgb(pixels[3], pixels[2], pixels[1], pixels[0]);
+=======
+        private void quadrato_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //prendiamo il pulsante specifico grazie a object sender nei parametri che è l'ellissi premuto
+            //con questa linea qui sotto verifichiamo per sicurezza che sia un ellisse e salviamo l'oggetto in una variabile
+            if (sender is Rectangle rec)
+            {
+                //ora prendiamo il colore dell'ellisse e lo diamo alla penna
+                SolidColorBrush scb = (SolidColorBrush)rec.Fill;
+                red_text.Text=scb.Color.R.ToString();
+                green_text.Text=scb.Color.G.ToString();
+                blue_text.Text=scb.Color.B.ToString();
+                hex_text.Text=string.Format("#{0:X2}{1:X2}{2:X2}", scb.Color.R, scb.Color.G, scb.Color.B);
+                new_color.Fill=scb;
+            }
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+>>>>>>> Stashed changes
         }
     }
 }

@@ -32,10 +32,72 @@
         </Style>
     </Window.Resources>
     <Grid Background="#FFC3C3C3">
-        <Button Content="Conferma" HorizontalAlignment="Left" Margin="318,236,0,0" VerticalAlignment="Top" Width="134" Background="#FF00FA23" Click="Conferma_Button_Click"/>
-        <TabControl HorizontalAlignment="Left" Height="246" Margin="10,10,0,0" VerticalAlignment="Top" Width="264" IsSynchronizedWithCurrentItem="True">
+        <TabControl HorizontalAlignment="Left" Margin="10,10,0,18" Width="264" IsSynchronizedWithCurrentItem="True">
             <TabItem Header="default">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid HorizontalAlignment="Center" Height="162" VerticalAlignment="Center" Width="212">
+                        <!-- RIGA 1 -->
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#000000" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="160,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#008080" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="135,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#800080" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="110,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#000080" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="85,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#808000" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="60,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#008000" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="35,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#800000" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="185,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#808080" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+
+                        <!-- RIGA 2 -->
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="10,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#C0C0C0" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="160,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FF0000" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="135,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#00FF00" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="110,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FFFF00" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="85,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#0000FF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="60,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FF00FF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="35,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#00FFFF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="185,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FFFFFF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+
+                        <!-- RIGA 3 -->
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="10,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#804040" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="160,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FF8080" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="135,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#80FF80" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="110,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FFFF80" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="85,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#8080FF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="60,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FF80FF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="35,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#80FFFF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="185,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FFFFFF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+
+                        <!-- RIGA 4 -->
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="10,85,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#400000" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="160,85,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#800040" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="135,85,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#004000" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="110,85,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#404000" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="85,85,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#000040" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="60,85,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#400040" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="35,85,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#004040" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="185,85,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#404040" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+
+                        <!-- RIGA 5 -->
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="10,110,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#C00000" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="160,110,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FF4040" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="135,110,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#40FF40" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="110,110,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FFFF40" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="85,110,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#4040FF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="60,110,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FF40FF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="35,110,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#40FFFF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="185,110,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#C0C0C0" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+
+                        <!-- RIGA 6 -->
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="10,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FF0080" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="160,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FF8000" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="135,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#80FF00" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="110,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#00FF80" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="85,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#0080FF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="60,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#8000FF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="35,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#FF00FF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+                        <Rectangle HorizontalAlignment="Left" Height="20" Margin="185,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="#00FFFF" MouseLeftButtonDown="quadrato_MouseLeftButtonDown"/>
+
+                    </Grid>
+                </Grid>
             </TabItem>
             <TabItem Header="personalizzati">
                 <Grid Background="#FFE5E5E5">
@@ -43,6 +105,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
+<<<<<<< Updated upstream
         <Border BorderBrush="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Height="180" Margin="299,36,0,0" VerticalAlignment="Top" Style="{StaticResource GlassPanelStyle}" Width="172">
             <Grid HorizontalAlignment="Center" Height="154" VerticalAlignment="Top" Width="162" Margin="0,9,0,0">
                 <Label Content="Red:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,2,0,0" Width="44" Height="25" FontSize="13"/>
@@ -57,6 +120,35 @@
                 <Label Content="Hex:" HorizontalAlignment="Left" Margin="23,86,0,0" VerticalAlignment="Top" Width="44" FontSize="13"/>
                 <TextBox HorizontalAlignment="Left" Height="25" Margin="67,87,0,0" TextWrapping="Wrap" Text="#000000" VerticalAlignment="Top" Width="86" BorderThickness="0,0,0,2" BorderBrush="Black" Padding="0,5,0,0"/>
                 <Rectangle x:Name="RettangoloPreviewColore"  Height="35" Margin="0,119,0,0" Stroke="Black" VerticalAlignment="Top"/>
+=======
+        <Border BorderBrush="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Margin="299,33,0,23" Style="{StaticResource GlassPanelStyle}" Width="172">
+            <Grid HorizontalAlignment="Center" Height="198" VerticalAlignment="Center" Width="132">
+                <Label Content="Red" HorizontalAlignment="Left" VerticalAlignment="Top" Width="44" Height="25" FontSize="13"/>
+                <Label Content="Green:" HorizontalAlignment="Left" Margin="0,32,0,0" VerticalAlignment="Top" FontSize="13" Width="44" Height="25" />
+                <Label Content="Blue" HorizontalAlignment="Left" VerticalAlignment="Top" Width="44" FontSize="13" Height="24" Margin="0,65,0,0"/>
+                <TextBox x:Name="red_text" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" BorderThickness="0,0,0,2" Padding="0,5,0,0" Margin="46,0,0,0" BorderBrush="Red" Background="{x:Null}"/>
+                <TextBox x:Name="green_text" HorizontalAlignment="Left" Height="25" Margin="46,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" BorderThickness="0,0,0,2" BorderBrush="Lime" Padding="0,5,0,0" Background="{x:Null}"/>
+                <TextBox x:Name="blue_text" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" BorderThickness="0,0,0,2" BorderBrush="Blue" Padding="0,5,0,0" Margin="46,64,0,0" Background="{x:Null}"/>
+                <Label Content="Hex" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top" Width="44" FontSize="13" Height="25"/>
+                <TextBox x:Name="hex_text" HorizontalAlignment="Left" Height="25" Margin="44,100,0,0" TextWrapping="Wrap" Text="#000000" VerticalAlignment="Top" Width="80" BorderThickness="0,0,0,2" BorderBrush="Black" Padding="0,5,0,0" Background="{x:Null}"/>
+                <Button Content="Conferma" HorizontalAlignment="Center" Margin="0,159,0,0" VerticalAlignment="Top" Width="134" Background="#4C00FF56" Click="Conferma_Button_Click" BorderBrush="{x:Null}">
+                    <Button.Resources>
+
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Annulla" HorizontalAlignment="Center" Margin="0,184,0,0" Width="70" FontSize="9" Background="#19E82020" Click="Button_Click" BorderBrush="{x:Null}" Padding="1,0,1,1">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Rectangle x:Name="new_color" HorizontalAlignment="Left" Height="24" Margin="68,132,0,0" VerticalAlignment="Top" Width="58" Fill="#FFE2C1C1"/>
+                <Rectangle x:Name="old_color" HorizontalAlignment="Left" Height="24" Margin="10,132,0,0" VerticalAlignment="Top" Width="58" Fill="White"/>
+>>>>>>> Stashed changes
             </Grid>
         </Border>
 
