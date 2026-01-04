@@ -23,8 +23,8 @@ namespace paint
         public Color coloreScelto;
         public bool confermato;
 
-
         
+
         public SelettoreColori()
         {
             InitializeComponent();
@@ -106,7 +106,6 @@ namespace paint
 
         private void quadrato_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
             //codice riutilizzato per la selezione dei colori di default(cri sei un grande)
             if (sender is Rectangle rec)
             {
@@ -116,11 +115,14 @@ namespace paint
                 blue_text.Text=scb.Color.B.ToString();
                 hex_text.Text=string.Format("#{0:X2}{1:X2}{2:X2}", scb.Color.R, scb.Color.G, scb.Color.B);
                 new_color.Fill=scb;
+
+                coloreScelto = scb.Color;
             }
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }
