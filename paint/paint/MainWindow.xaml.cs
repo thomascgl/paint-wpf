@@ -25,9 +25,14 @@ namespace paint
     public partial class MainWindow : Window
     {
         Ellipse[] personalizzati;
+        int indicePersonalizzati;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            personalizzati = new Ellipse[] { ellisse_Customcolor_1, ellisse_Customcolor_2, ellisse_Customcolor_3, ellisse_Customcolor_4, ellisse_Customcolor_5, ellisse_Customcolor_6 };
+            indicePersonalizzati = 0;
 
             DrawingAttributes inkAttributes = new DrawingAttributes()
             {
@@ -35,19 +40,12 @@ namespace paint
                 Height = 5,
                 Width = 5,
             };
-            personalizzati = new Ellipse[] { ellisse_Customcolor_1, ellisse_Customcolor_2, ellisse_Customcolor_3, ellisse_Customcolor_4, ellisse_Customcolor_5, ellisse_Customcolor_6 };
-            for (int i = 0; i < personalizzati.Length; i++)
-            {
-                personalizzati[i].Tag = "vuoto";
-            }
+            
             paintSurface.DefaultDrawingAttributes = inkAttributes;
             paintSurface.EditingMode = InkCanvasEditingMode.Ink;
 
             colore_sinistra.Tag = "attivo";
             
-
-
-
         }
 
 
@@ -309,24 +307,20 @@ namespace paint
                 // in futuro passare al prossimo elisse quando quello precedente è già pieno
                 // se tutti sono occupati si sovrascrive il primo e ri-inizia il giro, sovrasrivendo i colri vecchi
                 Color colore = finestraSelettore.coloreScelto;
-                foreach (Ellipse item in personalizzati)
-                {
-                    if (item.Tag=="vuoto")
-                    {
-                        item.Fill = new SolidColorBrush(colore);
-                        item.Tag = "pieno";
-                        break;
-                    }
-                }
+                SolidColorBrush scb = new SolidColorBrush(colore);
+
+                personalizzati[indicePersonalizzati++].Fill = scb;
+                if (indicePersonalizzati >= personalizzati.Length) indicePersonalizzati = 0;
+
                 //viene reso il colore selezionato
                 paintSurface.DefaultDrawingAttributes.Color = colore;
                 if (colore_sinistra.Tag == "attivo")
                 {
-                    colore_sinistra.Fill = new SolidColorBrush(colore);
+                    colore_sinistra.Fill = scb;
                 }
                 else if (colore_destra.Tag == "attivo")
                 {
-                    colore_destra.Fill = new SolidColorBrush(colore);
+                    colore_destra.Fill = scb;
                 }
             }
         }
