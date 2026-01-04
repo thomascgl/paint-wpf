@@ -24,7 +24,7 @@ namespace paint
 
     public partial class MainWindow : Window
     {
-
+        Ellipse[] personalizzati;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,11 +35,19 @@ namespace paint
                 Height = 5,
                 Width = 5,
             };
-
+            personalizzati = new Ellipse[] { ellisse_Customcolor_1, ellisse_Customcolor_2, ellisse_Customcolor_3, ellisse_Customcolor_4, ellisse_Customcolor_5, ellisse_Customcolor_6 };
+            for (int i = 0; i < personalizzati.Length; i++)
+            {
+                personalizzati[i].Tag = "vuoto";
+            }
             paintSurface.DefaultDrawingAttributes = inkAttributes;
             paintSurface.EditingMode = InkCanvasEditingMode.Ink;
 
             colore_sinistra.Tag = "attivo";
+            
+
+
+
         }
 
 
@@ -301,8 +309,15 @@ namespace paint
                 // in futuro passare al prossimo elisse quando quello precedente è già pieno
                 // se tutti sono occupati si sovrascrive il primo e ri-inizia il giro, sovrasrivendo i colri vecchi
                 Color colore = finestraSelettore.coloreScelto;
-                ellisse_Customcolor_1.Fill = new SolidColorBrush(colore);
-
+                foreach (Ellipse item in personalizzati)
+                {
+                    if (item.Tag=="vuoto")
+                    {
+                        item.Fill = new SolidColorBrush(colore);
+                        item.Tag = "pieno";
+                        break;
+                    }
+                }
                 //viene reso il colore selezionato
                 paintSurface.DefaultDrawingAttributes.Color = colore;
                 if (colore_sinistra.Tag == "attivo")

@@ -32,7 +32,7 @@
         </Style>
     </Window.Resources>
     <Grid Background="#FFC3C3C3">
-        <TabControl HorizontalAlignment="Left" Margin="10,10,0,18" Width="264" IsSynchronizedWithCurrentItem="True">
+        <TabControl HorizontalAlignment="Left" Margin="10,5,0,0" Width="264" IsSynchronizedWithCurrentItem="True" Height="246" VerticalAlignment="Top">
             <TabItem Header="default">
                 <Grid Background="#FFE5E5E5">
                     <Grid HorizontalAlignment="Center" Height="162" VerticalAlignment="Center" Width="212">
@@ -101,22 +101,55 @@
             </TabItem>
             <TabItem Header="personalizzati">
                 <Grid Background="#FFE5E5E5">
-                    <Image x:Name="ImageColore" HorizontalAlignment="Center" Height="220" VerticalAlignment="Center" Width="258" Source="Immagini/RGB_ColorSpectrum.png" Stretch="Fill" MouseDown="Image_MouseDown" MouseMove="Image_MouseMove"/>
+                    <Image x:Name="ImageColore" HorizontalAlignment="Left" Height="220" VerticalAlignment="Center" Width="221" Source="Immagini/RGB_ColorSpectrum.png" Stretch="Fill" MouseDown="Image_MouseDown" MouseMove="Image_MouseMove"/>
+                    <Grid HorizontalAlignment="Left" Margin="221,0,0,0" Width="37" Height="220" VerticalAlignment="Center">
+                        <Rectangle x:Name="modifica_opacità" HorizontalAlignment="Center" Height="184" Stroke="Black" VerticalAlignment="Top" Width="16" Margin="0,10,0,0">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black" Offset="1"/>
+                                    <GradientStop Color="White" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Slider x:Name="slider_op" HorizontalAlignment="Center" Height="184" VerticalAlignment="Top" Width="24" Orientation="Vertical" Cursor="Arrow" Foreground="{x:Null}" Margin="0,10,0,0">
+                            <Slider.Template>
+                                <ControlTemplate TargetType="{x:Type Slider}">
+                                    <Grid>
+
+                                        <!-- Track -->
+                                        <Track x:Name="PART_Track">
+                                            <Track.Thumb>
+                                                <!-- Thumb circolare -->
+                                                <Thumb Width="16" Height="16">
+                                                    <Thumb.Template>
+                                                        <ControlTemplate TargetType="{x:Type Thumb}">
+                                                            <Rectangle Fill="Transparent" Height="10" Width="22" Stroke="Black" StrokeThickness="2" Margin="-6,3,-6,3"/>
+                                                        </ControlTemplate>
+                                                    </Thumb.Template>
+                                                </Thumb>
+                                            </Track.Thumb>
+                                        </Track>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Slider.Template>
+                        </Slider>
+                        <Rectangle x:Name="q_colore" HorizontalAlignment="Center" Margin="0,199,0,1" Stroke="Black" Width="20" Height="20"/>
+                    </Grid>
                 </Grid>
             </TabItem>
         </TabControl>
-       
-        <Border BorderBrush="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Margin="299,33,0,23" Style="{StaticResource GlassPanelStyle}" Width="172">
-            <Grid HorizontalAlignment="Center" Height="198" VerticalAlignment="Center" Width="132">
-                <Label Content="Red" HorizontalAlignment="Left" VerticalAlignment="Top" Width="44" Height="25" FontSize="13"/>
-                <Label Content="Green:" HorizontalAlignment="Left" Margin="0,32,0,0" VerticalAlignment="Top" FontSize="13" Width="44" Height="25" />
-                <Label Content="Blue" HorizontalAlignment="Left" VerticalAlignment="Top" Width="44" FontSize="13" Height="24" Margin="0,65,0,0"/>
-                <TextBox x:Name="red_text" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" BorderThickness="0,0,0,2" Padding="0,5,0,0" Margin="46,0,0,0" BorderBrush="Red" Background="{x:Null}"/>
-                <TextBox x:Name="green_text" HorizontalAlignment="Left" Height="25" Margin="46,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" BorderThickness="0,0,0,2" BorderBrush="Lime" Padding="0,5,0,0" Background="{x:Null}"/>
-                <TextBox x:Name="blue_text" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" BorderThickness="0,0,0,2" BorderBrush="Blue" Padding="0,5,0,0" Margin="46,64,0,0" Background="{x:Null}"/>
-                <Label Content="Hex" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top" Width="44" FontSize="13" Height="25"/>
-                <TextBox x:Name="hex_text" HorizontalAlignment="Left" Height="25" Margin="44,100,0,0" TextWrapping="Wrap" Text="#000000" VerticalAlignment="Top" Width="80" BorderThickness="0,0,0,2" BorderBrush="Black" Padding="0,5,0,0" Background="{x:Null}"/>
-                <Button Content="Conferma" HorizontalAlignment="Center" Margin="0,159,0,0" VerticalAlignment="Top" Width="134" Background="#4C00FF56" Click="Conferma_Button_Click" BorderBrush="{x:Null}">
+
+        <Border BorderBrush="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Margin="299,0,0,0" CornerRadius="20,0,0,20" Style="{StaticResource GlassPanelStyle}" Width="201">
+            <Grid HorizontalAlignment="Center" Width="132" Margin="0,0,0,-1" Height="274" VerticalAlignment="Bottom">
+                <Label Content="Red" HorizontalAlignment="Left" VerticalAlignment="Top" Width="44" Height="26" FontSize="13" Margin="-2,24,0,0"/>
+                <Label Content="Green:" HorizontalAlignment="Left" Margin="-2,56,0,0" VerticalAlignment="Top" FontSize="13" Width="44" Height="26" />
+                <Label Content="Blue" HorizontalAlignment="Left" VerticalAlignment="Top" Width="44" FontSize="13" Height="24" Margin="-2,90,0,0"/>
+                <TextBox x:Name="red_text" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" BorderThickness="0,0,0,2" Padding="0,5,0,0" Margin="44,24,0,0" BorderBrush="Red" Background="{x:Null}"/>
+                <TextBox x:Name="green_text" HorizontalAlignment="Left" Height="26" Margin="44,56,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" BorderThickness="0,0,0,2" BorderBrush="Lime" Padding="0,5,0,0" Background="{x:Null}"/>
+                <TextBox x:Name="blue_text" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" BorderThickness="0,0,0,2" BorderBrush="Blue" Padding="0,5,0,0" Margin="44,88,0,0" Background="{x:Null}"/>
+                <Label Content="Hex" HorizontalAlignment="Left" Margin="-2,0,0,0" VerticalAlignment="Center" Width="44" FontSize="13" Height="26"/>
+                <TextBox x:Name="hex_text" HorizontalAlignment="Left" Height="26" Margin="42,0,0,0" TextWrapping="Wrap" Text="#000000" VerticalAlignment="Center" Width="80" BorderThickness="0,0,0,2" BorderBrush="Black" Padding="0,5,0,0" Background="{x:Null}"/>
+                <Button Content="Conferma" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top" Width="134" Background="#4C00FF56" Click="Conferma_Button_Click" BorderBrush="{x:Null}">
                     <Button.Resources>
 
                         <Style TargetType="Border">
@@ -124,15 +157,15 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Content="Annulla" HorizontalAlignment="Center" Margin="0,184,0,0" Width="70" FontSize="9" Background="#19E82020" Click="Button_Click" BorderBrush="{x:Null}" Padding="1,0,1,1">
+                <Button Content="Annulla" HorizontalAlignment="Center" Margin="0,250,0,0" Width="70" FontSize="9" Background="#19E82020" Click="Button_Click" BorderBrush="{x:Null}" Padding="1,0,1,1" Height="14" VerticalAlignment="Top">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="5"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Rectangle x:Name="new_color" HorizontalAlignment="Left" Height="24" Margin="68,132,0,0" VerticalAlignment="Top" Width="58" Fill="#FFE2C1C1"/>
-                <Rectangle x:Name="old_color" HorizontalAlignment="Left" Height="24" Margin="10,132,0,0" VerticalAlignment="Top" Width="58" Fill="White"/>
+                <Rectangle x:Name="new_color" HorizontalAlignment="Left" Height="24" Margin="66,180,0,0" VerticalAlignment="Top" Width="58" Fill="#FFE2C1C1"/>
+                <Rectangle x:Name="old_color" HorizontalAlignment="Left" Height="24" Margin="8,180,0,0" VerticalAlignment="Top" Width="58" Fill="White"/>
             </Grid>
         </Border>
 

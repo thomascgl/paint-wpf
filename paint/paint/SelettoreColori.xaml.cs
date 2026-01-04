@@ -53,10 +53,20 @@ namespace paint
             hex_text.Text = string.Format("#{0:X2}{1:X2}{2:X2}", hoveredColor.R, hoveredColor.G, hoveredColor.B);
             Brush b = new SolidColorBrush(hoveredColor);
             new_color.Fill = b;
+            coloreScelto = hoveredColor;
+
+            var colore = ((SolidColorBrush)new_color.Fill).Color;
+
+            modifica_opacità.Fill = new LinearGradientBrush(
+                Color.FromArgb(0, colore.R, colore.G, colore.B), // trasparente
+                colore,                                          // colore pieno
+                90                                                // verticale
+            );
         }
 
         private void Image_MouseMove(object sender, MouseEventArgs e)
         {
+            this.Cursor = Cursors.Cross;
             //variabile img è qui per comodità
             Image img = ImageColore;
             if (img == null) return;
@@ -101,7 +111,8 @@ namespace paint
 
             //salviamo il colore nella variabile che andrà alla MainWindow e lo mettiamo nel rettangolo di anteprima
             hoveredColor = Color.FromArgb(pixels[3], pixels[2], pixels[1], pixels[0]);
-            
+            Brush b = new SolidColorBrush(hoveredColor);
+            q_colore.Fill = b;
         }
 
         private void quadrato_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -116,6 +127,7 @@ namespace paint
                 blue_text.Text=scb.Color.B.ToString();
                 hex_text.Text=string.Format("#{0:X2}{1:X2}{2:X2}", scb.Color.R, scb.Color.G, scb.Color.B);
                 new_color.Fill=scb;
+                coloreScelto = scb.Color;
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
