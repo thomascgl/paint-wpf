@@ -135,5 +135,73 @@ namespace paint
         {
             this.Close();
         }
+
+        private void red_text_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //questo serve alla creazione della textBox
+            if (red_text == null || hex_text == null) return;
+
+            if (byte.TryParse(red_text.Text, out byte valoreRosso))
+            {
+                coloreScelto.R = valoreRosso;
+                SolidColorBrush scb = new SolidColorBrush(coloreScelto);
+                hex_text.Text = string.Format("#{0:X2}{1:X2}{2:X2}", scb.Color.R, scb.Color.G, scb.Color.B);
+                new_color.Fill = scb;
+            }
+        }
+
+        private void green_text_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //questo serve alla creazione della textBox
+            if (green_text == null || hex_text == null) return;
+
+            if (byte.TryParse(green_text.Text, out byte valoreVerde))
+            {
+                coloreScelto.G = valoreVerde;
+                SolidColorBrush scb = new SolidColorBrush(coloreScelto);
+                hex_text.Text = string.Format("#{0:X2}{1:X2}{2:X2}", scb.Color.R, scb.Color.G, scb.Color.B);
+                new_color.Fill = scb;
+            }
+        }
+
+        private void blu_text_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //questo serve alla creazione della textBox
+            if (blue_text == null || hex_text == null) return;
+
+            if (byte.TryParse(blue_text.Text, out byte valoreBlu))
+            {
+                coloreScelto.B = valoreBlu;
+                SolidColorBrush scb = new SolidColorBrush(coloreScelto);
+                hex_text.Text = string.Format("#{0:X2}{1:X2}{2:X2}", scb.Color.R, scb.Color.G, scb.Color.B);
+                new_color.Fill = scb;
+            }
+        }
+
+        private void hex_text_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //questo serve alla creazione della textBox
+            if (hex_text == null || red_text == null || green_text == null || blue_text == null) return;
+
+            string s = hex_text.Text;
+            if(s.Length != 7) return;
+            if (s[0] != '#') return;
+
+            //verifica se le altre lettere siano valide
+            for(int i=1; i < 7; i++)
+            {
+                //se non è un numero verifica che sia compreso tra A e F
+                if (!int.TryParse(s[i].ToString(), out int varInutile))
+                {
+                    if (s[i] < 65 && s[i] > 70) return;
+
+                }
+            }
+
+            coloreScelto = (Color)ColorConverter.ConvertFromString(hex_text.Text);
+            red_text.Text = coloreScelto.R.ToString();
+            green_text.Text = coloreScelto.G.ToString();
+            blue_text.Text = coloreScelto.B.ToString();
+        }
     }
 }
