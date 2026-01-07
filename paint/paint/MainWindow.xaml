@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:paint"
         mc:Ignorable="d"
-        Title="MainWindow" Height="860" Width="1216">
+        Title="MainWindow" Height="860" Width="1216" Icon="Immagini/logo.png">
     <Window.Resources>
 
         <Style x:Key="bStrumenti" TargetType="Border">

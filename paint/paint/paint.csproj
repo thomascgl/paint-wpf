@@ -123,5 +123,8 @@
   <ItemGroup>
     <Resource Include="cursore1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Immagini\logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
