@@ -44,9 +44,6 @@ namespace paint
         {
             coloreScelto = hoveredColor;
             new_color.Fill = new SolidColorBrush(coloreScelto);
-            //TODO: fare in modo che le tre textBox prendano il valore rgb e lo mostrino
-            // inoltre se cambi il valore rgb nelle textBox, viene messo quello come coloreScelto
-            //inserisce codice colore nelle textBox convertendo in hex e inserendolo nel nuovo colore
             red_text.Text = hoveredColor.R.ToString();
             green_text.Text = hoveredColor.G.ToString();
             blue_text.Text = hoveredColor.B.ToString();

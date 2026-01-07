@@ -308,8 +308,6 @@ namespace paint
 
             if (finestraSelettore.confermato)
             {
-                //TODO: per ora va nel primo elisse per testare
-                // in futuro passare al prossimo elisse quando quello precedente è già pieno
                 // se tutti sono occupati si sovrascrive il primo e ri-inizia il giro, sovrasrivendo i colri vecchi
                 Color colore = finestraSelettore.coloreScelto;
                 SolidColorBrush scb = new SolidColorBrush(colore);
