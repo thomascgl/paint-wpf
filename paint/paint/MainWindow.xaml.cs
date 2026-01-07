@@ -154,6 +154,11 @@ namespace paint
         private void slider_opacity_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             UpdateLabelPosition(slider_opacity, testo_opacita, 87);
+            Color c = paintSurface.DefaultDrawingAttributes.Color;
+
+            Color newC = Color.FromArgb((byte)slider_opacity.Value, c.R, c.G, c.B);
+
+            paintSurface.DefaultDrawingAttributes.Color = newC;
 
         }
 
