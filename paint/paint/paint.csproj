@@ -126,5 +126,14 @@
   <ItemGroup>
     <Resource Include="Immagini\logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="contagocce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="salva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="caricaa.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

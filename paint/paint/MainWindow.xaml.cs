@@ -33,7 +33,6 @@ namespace paint
 
             personalizzati = new Ellipse[] { ellisse_Customcolor_1, ellisse_Customcolor_2, ellisse_Customcolor_3, ellisse_Customcolor_4, ellisse_Customcolor_5, ellisse_Customcolor_6 };
             indicePersonalizzati = 0;
-
             DrawingAttributes inkAttributes = new DrawingAttributes()
             {
                 FitToCurve = true,
@@ -45,7 +44,9 @@ namespace paint
             paintSurface.EditingMode = InkCanvasEditingMode.Ink;
 
             colore_sinistra.Tag = "attivo";
-            
+            dimensione_finestra.Content = paintSurface.ActualWidth + " x " + paintSurface.ActualHeight;
+
+
         }
 
 
@@ -54,7 +55,7 @@ namespace paint
         {
             bordoMatita.Tag = "attivo";
             gomma_border.Tag = null;
-            bordo_testo.Tag = null;
+            bordo_contagocce.Tag = null;
             bordo_secchiello.Tag = null;
             paintSurface.EditingMode = InkCanvasEditingMode.Ink;
         }
@@ -216,7 +217,7 @@ namespace paint
             bordo_secchiello.Tag = "attivo";
             bordoMatita.Tag = null;
             gomma_border.Tag = null;
-            bordo_testo.Tag = null;
+            bordo_contagocce.Tag = null;
 
         }
 
@@ -225,12 +226,12 @@ namespace paint
             bordoMatita.Tag = null;
             gomma_border.Tag = "attivo";
             bordo_secchiello.Tag = null;
-            bordo_testo.Tag = null;
+            bordo_contagocce.Tag = null;
         }
 
         private void Label_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            bordo_testo.Tag = "attivo";
+            bordo_contagocce.Tag = "attivo";
             bordoMatita.Tag = null;
             gomma_border.Tag = null;
             bordo_secchiello.Tag = null;
@@ -258,45 +259,9 @@ namespace paint
             }
         }
 
-        private void SalvaCanvas_Button_Click(object sender, RoutedEventArgs e)
-        {
-            string nomeCartella = "Disegni_Salvati";
-            /* TODO: per ora abbiamo un solo file, ma in futuro vorrei fare in modo di poter
-                creare un nuovo file file o sovrasrivere quello attuale;
-                per questo motivo li ho piazzati in una cartella separata
-            */
-            string percorsoFile = nomeCartella + "\\Disegno.ink";
+       
 
-            if (!Directory.Exists(nomeCartella))
-            {
-                Directory.CreateDirectory(nomeCartella);
-            }
-
-            //inkCanvas salva gli strokes su uno stream
-            //se il file non esiste lo crea, se esiste lo sovrascrive
-            FileStream inkFileStream = new FileStream(percorsoFile, FileMode.Create);
-
-            //salva il disegno
-            paintSurface.Strokes.Save(inkFileStream);
-            inkFileStream.Close();
-        }
-
-        private void CaricaCanvas_Button_Click(object sender, RoutedEventArgs e)
-        {
-            string nomeCartella = "Disegni_Salvati";
-            string percorsoFile = nomeCartella + "\\Disegno.ink";
-
-            // If our file exists,
-            if (File.Exists(percorsoFile))
-            {
-                FileStream inkFileStream = new FileStream(percorsoFile, FileMode.Open, FileAccess.Read);
-                StrokeCollection strokes = new StrokeCollection(inkFileStream);
-                inkFileStream.Close();
-
-                paintSurface.Strokes = strokes;
-            }
-        }
-
+   
         private void paintSurface_DragEnter(object sender, DragEventArgs e)
         {
             posizione_cursore.Content = e.GetPosition(paintSurface);
@@ -325,6 +290,45 @@ namespace paint
                 {
                     colore_destra.Fill = scb;
                 }
+            }
+        }
+
+        private void salva_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            string nomeCartella = "Disegni_Salvati";
+            /* TODO: per ora abbiamo un solo file, ma in futuro vorrei fare in modo di poter
+                creare un nuovo file file o sovrasrivere quello attuale;
+                per questo motivo li ho piazzati in una cartella separata
+            */
+            string percorsoFile = nomeCartella + "\\Disegno.ink";
+
+            if (!Directory.Exists(nomeCartella))
+            {
+                Directory.CreateDirectory(nomeCartella);
+            }
+
+            //inkCanvas salva gli strokes su uno stream
+            //se il file non esiste lo crea, se esiste lo sovrascrive
+            FileStream inkFileStream = new FileStream(percorsoFile, FileMode.Create);
+
+            //salva il disegno
+            paintSurface.Strokes.Save(inkFileStream);
+            inkFileStream.Close();
+        }
+
+        private void carica_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            string nomeCartella = "Disegni_Salvati";
+            string percorsoFile = nomeCartella + "\\Disegno.ink";
+
+            // If our file exists,
+            if (File.Exists(percorsoFile))
+            {
+                FileStream inkFileStream = new FileStream(percorsoFile, FileMode.Open, FileAccess.Read);
+                StrokeCollection strokes = new StrokeCollection(inkFileStream);
+                inkFileStream.Close();
+
+                paintSurface.Strokes = strokes;
             }
         }
     }
