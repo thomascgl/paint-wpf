@@ -105,6 +105,7 @@ namespace paint
 
         private void Ellipse_MouseLeftButtonDown_sinistra(object sender, MouseButtonEventArgs e)
         {
+            //TODO:modificare opacità colore quando cambio colore(quando modifico opacità con slider e cambio colore dovrebbe aggiornare lo slider )
             colore_sinistra.Tag = "attivo";
             colore_destra.Tag = null;
             SolidColorBrush scb = (SolidColorBrush)colore_sinistra.Fill;
