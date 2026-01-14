@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:paint"
         mc:Ignorable="d"
-        Title="MainWindow" Height="860" Width="1216" Icon="Immagini/logo.png">
+        Title="MainWindow" Height="860" Width="1216" Icon="Immagini/logo.png" Loaded="Window_Loaded">
     <Window.Resources>
 
         <Style x:Key="bStrumenti" TargetType="Border">
@@ -63,11 +63,11 @@
     <!-- canvas area -->
     <Grid Background="#FFC3C3C3">
 
-        <InkCanvas Name="paintSurface" Margin="157,31,25,68" Background="White" DragEnter="paintSurface_DragEnter"/>
+        <InkCanvas Name="paintSurface" Margin="232,88,78,88" Background="White" DragEnter="paintSurface_DragEnter" MouseEnter="paintSurface_MouseEnter" MouseMove="paintSurface_MouseMove"/>
 
-        <Grid x:Name="griglia_oggetti" Height="708" VerticalAlignment="Center" HorizontalAlignment="Left" Width="152">
-            <Border x:Name="border_strumenti" BorderThickness="0,4,4,4" Height="690" VerticalAlignment="Center" CornerRadius="0,30,30,0" Margin="0,0,34,0" HorizontalAlignment="Right" Width="118" Style="{StaticResource GlassPanelStyle}">
-                <Grid x:Name="grid_strumenti" Height="690" VerticalAlignment="Center" Margin="0,0,-4,0">
+        <Grid x:Name="griglia_oggetti" Height="446" VerticalAlignment="Center" HorizontalAlignment="Left" Width="152">
+            <Border x:Name="border_strumenti" BorderThickness="0,4,4,4" Height="418" VerticalAlignment="Center" CornerRadius="0,30,30,0" Style="{StaticResource GlassPanelStyle}" Margin="0,0,34,0" HorizontalAlignment="Right" Width="118">
+                <Grid x:Name="grid_strumenti" Height="406" VerticalAlignment="Center" Margin="0,0,-4,0">
                     <WrapPanel x:Name="strumenti_pannello" Height="115" VerticalAlignment="Top" Width="102" HorizontalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,10,0,0">
                         <WrapPanel.Resources>
                             <Style TargetType="{x:Type Border}">
@@ -247,7 +247,7 @@
 
             </Label>
         </Grid>
-        <Border x:Name="specifiche_matita"  HorizontalAlignment="Left" Height="162" Margin="121,77,0,0" VerticalAlignment="Top" Width="222" Style="{StaticResource GlassPanelStyle}" MouseLeave="specifiche_matita_MouseLeave" Visibility="Hidden">
+        <Border x:Name="specifiche_matita"  HorizontalAlignment="Left" Height="162" Margin="128,212,0,0" VerticalAlignment="Top" Width="222" Style="{StaticResource GlassPanelStyle}" MouseLeave="specifiche_matita_MouseLeave" Visibility="Hidden">
             <Grid HorizontalAlignment="Center" Height="144" VerticalAlignment="Top" Width="204" Margin="0,9,0,0">
                 <Slider x:Name="slider_dimensione" HorizontalAlignment="Center" Height="25" Margin="0,37,0,0" VerticalAlignment="Top" Width="184" SmallChange="1"
             Maximum="100"
@@ -286,7 +286,7 @@
                 Text="0"/>
             </Grid>
         </Border>
-        <Border x:Name="impostazioni_gomma" BorderBrush="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Height="85" Margin="121,109,0,0" VerticalAlignment="Top" Width="229" Style="{StaticResource GlassPanelStyle}" MouseLeave="impostazioni_gomma_MouseLeave" Visibility="Hidden">
+        <Border x:Name="impostazioni_gomma" BorderBrush="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Height="85" Margin="128,212,0,0" VerticalAlignment="Top" Width="229" Style="{StaticResource GlassPanelStyle}" MouseLeave="impostazioni_gomma_MouseLeave" Visibility="Hidden">
             <Grid HorizontalAlignment="Center" Height="132" VerticalAlignment="Top" Width="229" Margin="0,9,0,0">
                 <TextBlock x:Name="tblock_dim_gomma"
                    VerticalAlignment="Top"
@@ -317,7 +317,7 @@
             <Grid HorizontalAlignment="Center" Height="32" VerticalAlignment="Center" Width="1216">
                 <Grid HorizontalAlignment="Left" Height="30" VerticalAlignment="Center" Width="111" Margin="10,0,0,0">
                     <Image HorizontalAlignment="Left" Height="20" VerticalAlignment="Center" Width="20" Source="/cursore1.png" Stretch="Fill"/>
-                    <Label x:Name="posizione_cursore" Content="0,0" HorizontalAlignment="Left" Height="16" VerticalAlignment="Center" Width="41" Padding="1,0,1,3" Margin="25,0,0,0" VerticalContentAlignment="Center"/>
+                    <Label x:Name="posizione_cursore" Content="0,0" HorizontalAlignment="Left" Height="16" VerticalAlignment="Center" Width="76" Padding="1,0,1,3" Margin="25,0,0,0" VerticalContentAlignment="Center"/>
 
                 </Grid>
                 <Separator HorizontalAlignment="Left" Height="30" Margin="113,0,0,0" VerticalAlignment="Center" Width="31" RenderTransformOrigin="0.5,0.5">
@@ -331,7 +331,7 @@
                     </Separator.RenderTransform>
                 </Separator>
                 <Grid HorizontalAlignment="Left" Height="30" VerticalAlignment="Center" Width="111" Margin="133,0,0,0">
-                    <Label x:Name="dimensione_finestra" Content="0,0" HorizontalAlignment="Center" Height="16" VerticalAlignment="Center" Width="41" Padding="1,0,1,3" VerticalContentAlignment="Center"/>
+                    <Label x:Name="dimensione_finestra" Content="0,0" HorizontalAlignment="Left" Height="16" VerticalAlignment="Center" Width="75" Padding="1,0,1,3" VerticalContentAlignment="Center" Margin="36,0,0,0"/>
                     <Rectangle HorizontalAlignment="Left" Height="14" Stroke="Black" VerticalAlignment="Center" Width="15" Margin="10,0,0,0"/>
 
                 </Grid>

@@ -62,10 +62,14 @@ namespace paint
 
         private void label_freccia_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            //animazioni per l'apertura e chiusura della barra degli strumenti
+
             DoubleAnimation anim = new DoubleAnimation
             {
+                
                 From = 0,
                 To = 150,
+               
                 Duration = new Duration(TimeSpan.FromSeconds(1)),
                 EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
             };
@@ -79,6 +83,7 @@ namespace paint
             grid_strumenti.Visibility = Visibility.Visible;
             if ((String)label_freccia.Content == ">")
             {
+                
                 griglia_oggetti.BeginAnimation(WidthProperty, anim);
                 label_freccia.Content = "<";
             }
@@ -236,6 +241,8 @@ namespace paint
             bordoMatita.Tag = null;
             gomma_border.Tag = null;
             bordo_secchiello.Tag = null;
+
+
         }
 
         //quando uno delle ellissi dei colori viene premuto nella finestra si entra qui
@@ -248,14 +255,20 @@ namespace paint
                 //ora prendiamo il colore dell'ellisse e lo diamo alla penna
                 SolidColorBrush scb = (SolidColorBrush)ellipse.Fill;
                 paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+                slider_dimensione.Value = paintSurface.DefaultDrawingAttributes.Width;
+                
+
 
                 if (colore_sinistra.Tag == "attivo")
                 {
+                    
                     colore_sinistra.Fill = scb;
+
                 }
                 else if (colore_destra.Tag == "attivo")
                 {
                     colore_destra.Fill = scb;
+
                 }
             }
         }
@@ -331,6 +344,21 @@ namespace paint
 
                 paintSurface.Strokes = strokes;
             }
+        }
+
+        private void paintSurface_MouseEnter(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void paintSurface_MouseMove(object sender, MouseEventArgs e)
+        {
+            posizione_cursore.Content = e.GetPosition(paintSurface);
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            dimensione_finestra.Content = paintSurface.ActualWidth + " x " + paintSurface.ActualHeight;
         }
     }
 }
