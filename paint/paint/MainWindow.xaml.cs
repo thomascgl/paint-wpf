@@ -46,7 +46,7 @@ namespace paint
             colore_sinistra.Tag = "attivo";
             dimensione_finestra.Content = paintSurface.ActualWidth + " x " + paintSurface.ActualHeight;
 
-
+            contagocce.Tag = null;
         }
 
 
@@ -238,11 +238,12 @@ namespace paint
         private void Label_MouseDown(object sender, MouseButtonEventArgs e)
         {
             bordo_contagocce.Tag = "attivo";
+            contagocce.Tag = "attivo";
             bordoMatita.Tag = null;
             gomma_border.Tag = null;
             bordo_secchiello.Tag = null;
 
-
+            paintSurface.EditingMode = InkCanvasEditingMode.None;
         }
 
         //quando uno delle ellissi dei colori viene premuto nella finestra si entra qui
@@ -359,6 +360,46 @@ namespace paint
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dimensione_finestra.Content = paintSurface.ActualWidth + " x " + paintSurface.ActualHeight;
+        }
+
+        private void paintSurface_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (contagocce.Tag?.ToString() != "attivo")
+                return; 
+
+            //this.Cursor = Cursors.Cross; 
+            // Punto cliccato sul controllo InkCanvas
+            Point pos = e.GetPosition(paintSurface);
+
+            // Trova la stroke sotto il mouse
+            StrokeCollection hitStrokes = paintSurface.Strokes.HitTest(pos, 5);
+
+            // Il secondo parametro è il raggio di tolleranza
+            if (hitStrokes == null || hitStrokes.Count == 0) return;
+
+            // Prendiamo la prima stroke trovata
+            Stroke hitStroke = hitStrokes[0]; 
+
+            // Otteniamo il colore della stroke
+            Color strokeColor = hitStroke.DrawingAttributes.Color;
+
+            SolidColorBrush scb = new SolidColorBrush(strokeColor);
+            personalizzati[indicePersonalizzati++].Fill = scb;
+            if (indicePersonalizzati >= personalizzati.Length) indicePersonalizzati = 0;
+
+            //viene reso il colore selezionato
+            paintSurface.DefaultDrawingAttributes.Color = strokeColor;
+            if (colore_sinistra.Tag == "attivo")
+            {
+                colore_sinistra.Fill = scb;
+            }
+            else if (colore_destra.Tag == "attivo")
+            {
+                colore_destra.Fill = scb;
+            }
+
+            contagocce.Tag = null;
+            bordo_contagocce.Tag = null;
         }
     }
 }
