@@ -310,7 +310,9 @@
                 TickFrequency="10"
                 ValueChanged="slider_dim_gomma_ValueChanged"
                 Loaded="slider_dim_gomma_Loaded"
-                Foreground="Black"/>
+                Foreground="Black">
+                    
+                </Slider>
             </Grid>
         </Border>
         <Border BorderBrush="{x:Null}" BorderThickness="2,2,2,2" HorizontalAlignment="Center" Width="1216" Style="{StaticResource GlassPanelStyle}" CornerRadius="0,0,0,0" Height="30" VerticalAlignment="Bottom">

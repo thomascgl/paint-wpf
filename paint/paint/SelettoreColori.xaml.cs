@@ -55,8 +55,9 @@ namespace paint
             var colore = ((SolidColorBrush)new_color.Fill).Color;
 
             modifica_opacità.Fill = new LinearGradientBrush(
-                Color.FromArgb(0, colore.R, colore.G, colore.B), // trasparente
-                colore,                                          // colore pieno
+                
+                colore,
+                Color.FromArgb(0, colore.R, colore.G, colore.B),// colore pieno
                 90                                                // verticale
             );
         }
@@ -199,6 +200,24 @@ namespace paint
             red_text.Text = coloreScelto.R.ToString();
             green_text.Text = coloreScelto.G.ToString();
             blue_text.Text = coloreScelto.B.ToString();
+        }
+
+        private void slider_op_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Color c = new Color();
+            if (new_color == null) return;
+            Brush brush = new_color.Fill;
+            if (brush is SolidColorBrush solid)
+            {
+               c = solid.Color;
+
+
+            }
+            Color c2 = Color.FromArgb((byte)slider_op.Value, c.R, c.G, c.B);
+            Brush B2 = new SolidColorBrush(c2);
+            
+            new_color.Fill = B2;
+            coloreScelto = c2;
         }
     }
 }
