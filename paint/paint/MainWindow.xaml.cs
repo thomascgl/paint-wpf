@@ -225,6 +225,7 @@ namespace paint
             gomma_border.Tag = null;
             bordo_contagocce.Tag = null;
 
+            paintSurface.Background = new SolidColorBrush(paintSurface.DefaultDrawingAttributes.Color);
         }
 
         private void gomma_Img_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -255,10 +256,11 @@ namespace paint
             {
                 //ora prendiamo il colore dell'ellisse e lo diamo alla penna
                 SolidColorBrush scb = (SolidColorBrush)ellipse.Fill;
-                paintSurface.DefaultDrawingAttributes.Color = scb.Color;
+                Color c = scb.Color;
                 slider_dimensione.Value = paintSurface.DefaultDrawingAttributes.Width;
-                
 
+                Color newC = Color.FromArgb((byte)slider_opacity.Value, c.R, c.G, c.B);
+                paintSurface.DefaultDrawingAttributes.Color = newC;
 
                 if (colore_sinistra.Tag == "attivo")
                 {
@@ -295,8 +297,11 @@ namespace paint
                 personalizzati[indicePersonalizzati++].Fill = scb;
                 if (indicePersonalizzati >= personalizzati.Length) indicePersonalizzati = 0;
 
+                Color c = scb.Color;
+                Color newC = Color.FromArgb((byte)slider_opacity.Value, c.R, c.G, c.B);
+                paintSurface.DefaultDrawingAttributes.Color = newC;
+
                 //viene reso il colore selezionato
-                paintSurface.DefaultDrawingAttributes.Color = colore;
                 if (colore_sinistra.Tag == "attivo")
                 {
                     colore_sinistra.Fill = scb;
