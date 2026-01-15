@@ -64,7 +64,6 @@
     <Grid Background="#FFC3C3C3">
 
         <InkCanvas Name="paintSurface" Margin="232,88,78,88" Background="White" DragEnter="paintSurface_DragEnter" MouseEnter="paintSurface_MouseEnter" MouseMove="paintSurface_MouseMove" MouseDown="paintSurface_MouseDown"/>
-
         <Grid x:Name="griglia_oggetti" Height="446" VerticalAlignment="Center" HorizontalAlignment="Left" Width="152">
             <Border x:Name="border_strumenti" BorderThickness="0,4,4,4" Height="418" VerticalAlignment="Center" CornerRadius="0,30,30,0" Style="{StaticResource GlassPanelStyle}" Margin="0,0,34,0" HorizontalAlignment="Right" Width="118">
                 <Grid x:Name="grid_strumenti" Height="406" VerticalAlignment="Center" Margin="0,0,-4,0">
@@ -264,10 +263,10 @@
             VerticalAlignment="Top"
             Width="184"
             SmallChange="1"
-            Maximum="100"
+            Maximum="255"
             Minimum="1"
             TickPlacement="BottomRight"
-            Value="100"
+            Value="255"
             TickFrequency="10"
             Foreground="Black" Margin="0,106,0,0" ValueChanged="slider_opacity_ValueChanged" Loaded="slider_opacity_Loaded"/>
 
