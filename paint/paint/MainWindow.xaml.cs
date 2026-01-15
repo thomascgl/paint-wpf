@@ -298,8 +298,8 @@ namespace paint
                 if (indicePersonalizzati >= personalizzati.Length) indicePersonalizzati = 0;
 
                 Color c = scb.Color;
-                Color newC = Color.FromArgb((byte)slider_opacity.Value, c.R, c.G, c.B);
-                paintSurface.DefaultDrawingAttributes.Color = newC;
+                slider_opacity.Value = c.A;
+                paintSurface.DefaultDrawingAttributes.Color = c;
 
                 //viene reso il colore selezionato
                 if (colore_sinistra.Tag == "attivo")
